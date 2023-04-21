@@ -1,0 +1,209 @@
+/* STYLE SECTIONING TAGS */
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: Merienda,'Rubik 80s Fade';
+}
+
+h5 {
+  padding: 3%;
+}
+
+body {
+ background-color: #ffc7f5; 
+  text-align: center;
+  cursor: url("assets/flowercursor.png"), auto;
+}
+
+button {
+ font-size: 120%; 
+}
+
+.welcome {
+  color: #43203b;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.othertext {
+  animation: fadeIn 2s;
+}
+
+
+.ashley:hover {
+  border: 3px solid black
+}
+
+
+.explore {
+  padding-bottom: 1em;
+  animation: fadeIn 2s;
+}
+
+#pinkflower {
+  border-radius: 20%;
+}
+
+#storm {
+  border-radius: 5%;
+}
+
+#lemons {
+  border-radius: 5%;
+}
+
+/* STYLE TEXT */
+h1 {
+  color: #472543;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+p {
+  color: #b607a2;
+  text-align: center;
+  font-size: 20px;
+}
+
+main{
+  margin-top: .5%;
+  margin-bottom: .5%;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+
+/* STYLE IMAGES */
+img {
+  max-width: 50%;
+  border-radius: 15%;
+  border: 3px solid white;
+  margin-bottom: 2em;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+
+#mylinkedin:hover {
+  transform: scale(1.2);
+  animation-name: logo-icon;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+#myartshop:hover {
+  transform: scale(1.2);
+  animation-name: logo-icon;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+#carvr:hover {
+  transform: scale(1.2);
+  animation-name: logo-icon;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+#mygithub:hover {
+  transform: scale(1.2);
+  animation-name: logo-icon;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+
+/* STYLE NAV BAR */
+
+ul {
+  list-style-type: none;
+  background-color: #ffc7f5;
+  overflow: hidden;
+  padding: 1em;
+  
+}
+
+li {
+  display: inline;
+  li: hover {
+    
+  }
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.3em;
+  padding: 1em;
+}
+
+li a:hover {
+  color: #dc5bbb;
+}
+
+.pinkcurve {
+    position: absolute;
+    top: 1;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.pinkcurve svg {
+    position: relative;
+    display: block;
+    width: calc(110% + 1.3px);
+    height: 89px;
+}
+
+.pinkcurve .shape-fill {
+    fill: #ffc7f5;
+}
+
+
+.insection2 {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  margin-right: 10%;
+  margin-left: 10%;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.portfoliosection {
+  margin-top: 15%;
+  margin-bottom: 5%;
+  margin-right: 10%;
+  margin-left: 10%;
+  font-family: 'Leckerli One', cursive;
+}
+
+.technical {
+  font-family: 'Source Code Pro', monospace;
+}
+
+
+.artsy {
+  font-family: 'Leckerli One', cursive;
+  font-size: 25px
+}
+
+#enterbutton {
+  background-color: #ff8afd;
+  border: dashed;
+  color: "white";
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-family: 'Source Code Pro', monospace;
+  cursor: url("assets/vrcursor.png"), auto;
+  position: absolute;
+  top: 12%;
+  left: 45%;
+}

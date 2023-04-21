@@ -1,30 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Merienda:wght@800&display=swap" rel="stylesheet">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
-</style>
 
-       <nav>
-      <ul>
+    <nav>
+      <ul id="ulnavbar">
         <li>
-          <a class="artsy" href="index.html">Welcome</a>
+          <a href="index.html">Welcome</a>
         </li>
         <li>
-          <a class="artsy" href="portfolio.html">Creative Portfolio</a>
+          <a href="portfolio.html">Creative Portfolio</a>
         </li>
         <li>
-          <a class="artsy" href="projects.html">Technical Projects</a>
+          <a href="projects.html">Technical Projects</a>
         </li>
       </ul>
       
     </nav>
-    <title>Creative Portfolio</title>
+    
+    <title>Ashley's Portfolio</title>
     <meta charset="utf-8" />
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	  <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -36,28 +30,85 @@
 	  <script src="/script.js" defer></script>
 
   </head>
-  <body style="background-color: #E1A6FF";>
-    <section style="background-color: #ffc7f5";>
-      <h2 class="artsy"> 
-        <br></br>
-        My Creative Portfolio</h2>
-      <div class="pinkcurve">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
-    </svg>
-      </div>
-    </section>
+  
+  <body>
     
+    <header>
+    <h1 id="helloworld" class="welcome">Hello, World!</h1>
+      <h4 style="color: black"; class="explore"> Explore to learn more about Ashley Neall and her passions.</h4>
+      
+    <img class="ashley" id="ashleyvr" src="assets/ashleyVR.jpg" alt="Ashley out in nature with a headset!" style="border-radius: 50%;"/>
 
-    <p class="artsy" >When Live Gives Lemons</p>
-    <img class="artwork" id="lemons" style="max-width: 30%;" src="assets/lemons.jpg" alt="A warm-toned artwork of a saturated, purple and orange sunset. The setting sun resembles a lemon as a goose relaxes in the water below that is sunkissed by the citrus sky."/>
+      <script>
 
-    <p class="artsy">Storm of Stress</p>
-    <img class="artwork" id="storm" style="max-width: 30%;" src="assets/storm.jpg" alt="A blue-toned artwork of lockers and paper flying and crashing through a stormy sky."/>
+        let i = 0;
+        
+      document.getElementById("ashleyvr").onclick = function() {transformsite()};
 
-    <p class="artsy">The Guileless Dewdrop Stream</p>
-    <img class="artwork" id="guileless" style="max-width: 30%;" src="assets/guileless.jpg" alt="A magical, natural scene that focuses on a stream and micro-habitat located near a tree's roots."/>
 
+      function transformsite() {
+        if (document.body.style.backgroundColor != "black") {
+          document.body.style.backgroundColor = "black";
+        document.getElementById("ulnavbar").style.backgroundColor = "black";
+        document.getElementsByTagName('H1')[0].style.color = "black";
+        document.getElementById("mylinkedin").style.display = "none";
+        document.getElementById("myartshop").style.display = "none";
+        document.getElementById("carvr").style.display = "none";
+        document.getElementById("mygithub").style.display = "none";
+            
+
+           while (i == 0) {
+             var mybutton = document.createElement("BUTTON");
+             var buttontext = document.createTextNode("ENTER");
+             mybutton.id = "enterbutton";
+             mybutton.appendChild(buttontext);
+             document.body.appendChild(mybutton);
+              i += 1;
+           }
+          
+        document.getElementById("enterbutton").style.visibility = "visible";
+          
+        }
+        
+        else {
+          document.body.style.backgroundColor = "#ffc7f5";
+        document.getElementById("ulnavbar").style.backgroundColor = "#ffc7f5";
+        document.getElementsByTagName('H1')[0].style.color = "black";
+        document.getElementById("mylinkedin").style.display = "initial";
+        document.getElementById("myartshop").style.display = "initial";
+        document.getElementById("carvr").style.display = "initial";
+        document.getElementById("mygithub").style.display = "initial";
+          document.getElementById("enterbutton").style.visibility = "hidden";
+          
+        }
+
+        document.getElementById("enterbutton").onclick = function() {buttonclick()};
+        
+        function buttonclick() {
+        window.location.href = "https://ashleyinvr.glitch.me";
+    }
+      }
+        
+        
+       
+    </script>
+      
+    </header>
+
+
+    
+    <main>
+    <a href="https://www.linkedin.com/in/ashley-neall"> <img id="mylinkedin" src="assets/linkedin.svg.png" width=20% height=20% style="border-radius: 50%;"/></a>
+
+    <a href="https://www.ashleynarts.com"> <img id="myartshop" src="assets/ashleynarts.jpg" width=20% height=20% style="border-radius: 50%;"/></a>
+
+    <a href="https://www.instagram.com/uncarvr/"> <img id="carvr" src="assets/carvr.png" width=22% height=22% style="border: 0;"/></a>
+
+    <a href="https://github.com/aneall"> <img id="mygithub" src="assets/github.png" width=20% height=20% style="border: 0;"/></a>
+      
+
+    </main>
+    
     <div></div>
 
     <footer>
