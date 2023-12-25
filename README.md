@@ -2,9 +2,9 @@
 
 ## An Introduction
 [My Personal Website!](https://aneall.github.io) is a work-in-progress portfolio to showcase my work related to:
-- XR (computer graphics and vision, 3D modeling and animation, 2D design, Unity development, research)
-- BCIs (neuroscience expertise, hardware projects)
-- Applied engineering (design and fabrication of, for example, a low-cost optical system)! 
+- XR (research, computer graphics and vision projects, 3D modeling and animation, 2D design, and Unity development)
+- BCIs (neuroscience expertise and hardware projects)
+- Applied Engineering (design and fabrication of, for example, a low-cost optical system)! 
 
 ## Homepage
 If you pay close attention, you'll notice three things:
