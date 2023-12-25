@@ -1,7 +1,7 @@
 # [My Personal Website!](https://aneall.github.io)
 
 ## An Introduction
-[My Personal Website!](https://aneall.github.io) is a work-in-progress portfolio to showcase my work related to XR (computer graphics and vision, 3D modeling and animation, 2D fine art, Unity), BCIs (neuroscience expertise, hardware projects), and applied engineering (design and fabrication of, for example, a low-cost optical system)! 
+[My Personal Website!](https://aneall.github.io) is a work-in-progress portfolio to showcase my work related to XR (computer graphics and vision, 3D modeling and animation, 2D design, Unity development, research), BCIs (neuroscience expertise, hardware projects), and applied engineering (design and fabrication of, for example, a low-cost optical system)! 
 
 ## Homepage
 If you pay close attention, you'll notice three things:
