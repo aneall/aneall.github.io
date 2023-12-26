@@ -23,10 +23,10 @@
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	  <!-- link the webpage's stylesheet -->
+	  <!-- linking stylesheet -->
 	  <link rel="stylesheet" href="/style.css" />
 
-	  <!-- link the webpage's JavaScript file -->
+	  <!-- linking JavaScript file(s) -->
 	  <script src="/script.js" defer></script>
 
   </head>
@@ -34,13 +34,11 @@
   <body>
     
     <header>
-    <h1 id="helloworld" class="welcome">Hello, World!</h1>
-      <h4 style="color: black"; class="explore"> Explore to learn more about Ashley Neall and her passions.</h4>
-      
+    <h1 class="welcome">Hello there, I'm Ashley!</h1>
+    <h4 style="color: black"; class="explore"> As you explore to learn more about me, click below for an XR surprise ;)</h4>
     <img class="ashley" id="ashleyvr" src="assets/ashleyVR.jpg" alt="Ashley out in nature with a headset!" style="border-radius: 50%;"/>
 
       <script>
-
         let i = 0;
         
       document.getElementById("ashleyvr").onclick = function() {transformsite()};
@@ -54,7 +52,9 @@
         document.getElementById("mylinkedin").style.display = "none";
         document.getElementById("myartshop").style.display = "none";
         document.getElementById("carvr").style.display = "none";
+        document.getElementById("icxr").style.display = "none";
         document.getElementById("mygithub").style.display = "none";
+        document.getElementById("aboutme").style.display = "none";
             
 
            while (i == 0) {
@@ -77,7 +77,9 @@
         document.getElementById("mylinkedin").style.display = "initial";
         document.getElementById("myartshop").style.display = "initial";
         document.getElementById("carvr").style.display = "initial";
+        document.getElementById("icxr").style.display = "initial";
         document.getElementById("mygithub").style.display = "initial";
+        document.getElementById("aboutme").style.display = "inherit";
           document.getElementById("enterbutton").style.visibility = "hidden";
           
         }
@@ -88,23 +90,36 @@
         window.location.href = "https://ashleyinvr.glitch.me";
     }
       }
-        
-        
-       
     </script>
-      
     </header>
+
+    <!-- About Me -->
+    <section id="aboutme">
+      <h3>About Me</h3>
+      <p>
+          My name is Ashley Neall, and I'm a current Sophomore at
+          <a style="color: #1784c4;" href="https://cs.unc.edu" target="_blank">UNC-Chapel Hill</a> studying Computer Science, Neuroscience, and Applied Engineering.
+          I'm passionate about computer graphics and vision, optics, and brain-computer interfaces – all of which are crucial to the field of XR!
+          If I'm not developing XR experiences, I'm busy leading <a style="color: #1f759b;" href="https://linktr.ee/carvr" target="_blank">Carolina AR/VR (UNC's XR student organization)</a>
+          and <a style="color: #401f9b;" href="https://www.icxr.org/" target="_blank">ICXR (an international + intercollegiate XR organization)</a>, 
+          researching in the <a style="color: #1f759b;" href="https://telepresence.web.unc.edu" target="_blank">Telepresence Lab</a>, working on
+          <a style="color: #f335c0;" href="projects.html" target="_blank">projects</a>, or creating 
+          <a style="color: #f335c0;" href="portfolio.html" target="_blank">art</a>!
+      </p>
+  </section>
 
 
     
     <main>
-    <a href="https://www.linkedin.com/in/ashley-neall"> <img id="mylinkedin" src="assets/linkedin.svg.png" width=20% height=20% style="border-radius: 50%;"/></a>
+    <a href="https://www.linkedin.com/in/ashley-neall"> <img id="mylinkedin" src="assets/linkedin.svg.png" width=10% height=10% style="border-radius: 50%;"/></a>
 
-    <a href="https://www.ashleynarts.com"> <img id="myartshop" src="assets/ashleynarts.jpg" width=20% height=20% style="border-radius: 50%;"/></a>
+    <a href="https://www.ashleynarts.com"> <img id="myartshop" src="assets/ashleynarts.jpg" width=10% height=10% style="border-radius: 50%;"/></a>
 
-    <a href="https://linktr.ee/carvr"> <img id="carvr" src="assets/carvr.png" width=22% height=22% style="border: 0;"/></a>
+    <a href="https://linktr.ee/carvr"> <img id="carvr" src="assets/carvr.png" width=11% height=11% style="border: 0;"/></a>
 
-    <a href="https://github.com/aneall"> <img id="mygithub" src="assets/github.png" width=20% height=20% style="border: 0;"/></a>
+    <a href="https://www.icxr.org"> <img id="icxr" src="assets/icxr.png" width=10% height=10% style="border-radius: 50%;"/></a>
+
+    <a href="https://github.com/aneall"> <img id="mygithub" src="assets/github.png" width=10% height=10% style="border: 0;"/></a>
       
 
     </main>
@@ -113,7 +128,7 @@
 
     <footer>
       <h5>
-       Made with ❤︎ by Ashley Neall © 2022
+       Made with ❤︎ by Ashley Neall © 2023
     </h5>
 </footer>
     
