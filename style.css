@@ -1,4 +1,20 @@
+/* STYLE CONFIGRUATIONS FOR THREE.JS GRAPHICS */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensures that Three.js graphics on the canvas is behind all other content! */
+}
+
+#ulnavbar, header, #aboutme, main, footer {
+  position: relative;
+  z-index: 1; /* Ensures that the navbar, header, 'about me', main, and footer sections are in front of the canvas */
+  background-color: rgba(255, 199, 245, 0.9); /* Cool 'faded' effect for Three.js graphics by making background in front of the canvas transparent! */
+}
+
+
 /* STYLE SECTIONING TAGS */
+
 *{
   margin: 0px;
   padding: 0px;

@@ -30,7 +30,8 @@ function init() {
   });
 
   // Set scene's background color:
-  renderer.setClearColor(new THREE.Color(0x333F47, 1));
+  renderer.setClearColor(0xffffff, 1);
+  // change to 0xffc7f5 once done!
 
   // Setting up scene light(s):
   let light = new THREE.PointLight(0xffffff); // Declare and initalize a point light
@@ -40,16 +41,19 @@ function init() {
   // TODO: Add OrbitControls so that we can pan around with the mouse
   // This requires including OrbitControls script in your HTML or importing it!!!
   // controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+  // TODO: MAKE THE TRANSPARENT PINK LAYER MATCH UP W OTHER SECTIONS
   
   // Set up 2D 'grid' of 3D objects:
   for (let x = -10; x <= 10; x += 5) { // looping through x-axis positions
     for (let y = -10; y <= 10; y += 5) { // looping through y-axis positions 
 
-      let cubeGeometry = new THREE.BoxGeometry(2, 2, 2); // Declare and initialize cube's geometry
-      let cubeMaterial = new THREE.MeshLambertMaterial({color: 0x1ec876}); // Declare and initialize cube's material
+      let cubeGeometry = new THREE.BoxGeometry(1, 1, 1); // Declare and initialize cube's geometry
+      let cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff57cf}); // Declare and initialize cube's material
       let cube = new THREE.Mesh(cubeGeometry, cubeMaterial); // Creates the cube as a 3D object
 
       cube.position.set(x, y, 0); // Set cube's 3D position
+        // Previous bigger grid (15 cubes): cube.position.set(x, y, 0);
       cubes.push(cube); // Adds the first cube to my 'cubes' array
       scene.add(cube); // Add cube to scene
     }
