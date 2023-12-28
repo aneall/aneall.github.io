@@ -4,6 +4,7 @@ canvas {
   top: 0;
   left: 0;
   z-index: -1; /* Ensures that Three.js graphics on the canvas is behind all other content! */
+  /* when the canvas is at this layer, orbit controls don't work! */
 }
 
 #ulnavbar, header, #aboutme, main, footer {

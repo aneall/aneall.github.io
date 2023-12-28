@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Merienda:wght@800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/x-icon">
+
+    <nav>
+      <ul id="ulnavbar">
+        <li>
+          <a href="index.html">Welcome</a>
+        </li>
+        <li>
+          <a href="portfolio.html">Creative Portfolio</a>
+        </li>
+        <li>
+          <a href="projects.html">Technical Projects</a>
+        </li>
+
+        <li>
+          <a href="sandbox.html">Sandbox</a>
+        </li>
+
+      </ul>
+    </nav>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Three.js Sandbox</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 </head>
 <body>
-    <!-- Your HTML content here (if any) -->
 
-    <!-- Reference to External JavaScript File -->
+    <!-- linking stylesheet -->
+	  <link rel="stylesheet" href="/style.css" />
+      
+    <!-- linking Three.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- linking Orbit Controls -->
+    <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  
+    <!-- linking glTF loader -->
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <!-- linking JavaScript file(s) -->
     <script src="/graphics.js" defer></script>
 </body>
 </html>

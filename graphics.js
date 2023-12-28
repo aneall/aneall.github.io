@@ -1,7 +1,8 @@
 // .js file for Three.js 3D graphic renderings
+// Use https://unpkg.com/browse/three@0.128.0/ to find more Three.js addons!
 
 // Declare the 'scene', 'camera', 'renderer' as global variables:
-let scene, camera, renderer;
+let scene, camera, renderer, controls // CONTROLS ADDED
 
 // Declare the 'cubes', 'teapots', and 'oldwells' object arrays as global variables:
 let cubes = [];
@@ -21,8 +22,11 @@ function init() {
   document.body.appendChild(renderer.domElement); // Append renderer's canvas element to DOM
 
   camera = new THREE.PerspectiveCamera(45, WIDTH / HEIGHT, 0.1, 20000); // Define perspective camera (45 FOV, aspect ratio, near plane, far plane)
+  console.log(); // DEBUGGING FOR CONTROLS
+  controls = new THREE.OrbitControls(camera, renderer.domElement);
   camera.position.set(0, 0, 18); // Define camera's 3D position (x, y, z)
   scene.add(camera); // Add camera to scene (makes the camera's FOV the FOV for the viewport)
+  controls.update();
 
   // Define event listener that resizes the renderer with the browser window
   window.addEventListener('resize', function() {
@@ -101,6 +105,9 @@ function init() {
 // Define animate() to continuously re-render my content:
 function animate() {
     requestAnimationFrame(animate); // Recursion to continuously call animate()
+
+    // CONTROLS TEST:
+    controls.update();
     
     // Rotating cubes (objects in the 'cubes' array) around their axes (local rotations):
     cubes.forEach(function(c, i) {
