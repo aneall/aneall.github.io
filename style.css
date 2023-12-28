@@ -12,7 +12,6 @@ canvas {
   background-color: rgba(255, 199, 245, 0.9); /* Cool 'faded' effect for Three.js graphics by making background in front of the canvas transparent! */
 }
 
-
 /* STYLE SECTIONING TAGS */
 
 *{
@@ -40,7 +39,7 @@ body {
 }
 
 button {
- font-size: 120%; 
+ font-size: 120%;
 }
 
 .welcome {
@@ -182,6 +181,7 @@ img {
   position: absolute;
   top: 12%;
   left: 45%;
+  z-index: 1;
 }
 
 /* Index.HTML "About Me" */

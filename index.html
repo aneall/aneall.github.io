@@ -29,14 +29,18 @@
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-     <!-- linking Three.js library -->
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
     <!-- linking stylesheet -->
 	  <link rel="stylesheet" href="/style.css" />
 
-	  <!-- linking JavaScript file(s) -->
+     <!-- linking Three.js library -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- linking glTF loader -->
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <!-- linking JavaScript file(s) -->
 	  <script src="/graphics.js" defer></script>
+    
 
   </head>
   
@@ -50,56 +54,68 @@
       <script>
         let i = 0;
         
-      document.getElementById("ashleyvr").onclick = function() {transformsite()};
+        document.getElementById("ashleyvr").onclick = function() {transformsite()};
 
 
-      function transformsite() {
-        if (document.body.style.backgroundColor != "black") {
-          document.body.style.backgroundColor = "black";
-        document.getElementById("ulnavbar").style.backgroundColor = "black";
-        document.getElementsByTagName('H1')[0].style.color = "black";
-        document.getElementById("mylinkedin").style.display = "none";
-        document.getElementById("myartshop").style.display = "none";
-        document.getElementById("carvr").style.display = "none";
-        document.getElementById("icxr").style.display = "none";
-        document.getElementById("mygithub").style.display = "none";
-        document.getElementById("aboutme").style.display = "none";
+        function transformsite() {  
+
+          var rendererElement = document.querySelector('canvas');
+          var pinkBackgrounds = document.querySelectorAll('#ulnavbar, header, #aboutme, main, footer');
+
+          if (document.body.style.backgroundColor != "black") {
+            document.body.style.backgroundColor = "black";
+
+            pinkBackgrounds.forEach(function(el) {
+              el.style.backgroundColor = "black"; // set background color to black for the 5 elements above ^
+            });
+
+            document.getElementsByTagName('H1')[0].style.color = "black";
+            document.getElementById("mylinkedin").style.display = "none";
+            document.getElementById("myartshop").style.display = "none";
+            document.getElementById("carvr").style.display = "none";
+            document.getElementById("icxr").style.display = "none";
+            document.getElementById("mygithub").style.display = "none";
+            document.getElementById("aboutme").style.display = "none";
+            rendererElement.style.display = "none";
+              
+
+            while (i == 0) {
+              var mybutton = document.createElement("BUTTON");
+              var buttontext = document.createTextNode("ENTER");
+              mybutton.id = "enterbutton";
+              mybutton.appendChild(buttontext);
+              document.body.appendChild(mybutton);
+                i += 1;
+            }
             
+          document.getElementById("enterbutton").style.visibility = "visible";
+          }
+          
+          else {
+            document.body.style.backgroundColor = "#ffc7f5";
 
-           while (i == 0) {
-             var mybutton = document.createElement("BUTTON");
-             var buttontext = document.createTextNode("ENTER");
-             mybutton.id = "enterbutton";
-             mybutton.appendChild(buttontext);
-             document.body.appendChild(mybutton);
-              i += 1;
-           }
-          
-        document.getElementById("enterbutton").style.visibility = "visible";
-          
-        }
-        
-        else {
-          document.body.style.backgroundColor = "#ffc7f5";
-        document.getElementById("ulnavbar").style.backgroundColor = "#ffc7f5";
-        document.getElementsByTagName('H1')[0].style.color = "black";
-        document.getElementById("mylinkedin").style.display = "initial";
-        document.getElementById("myartshop").style.display = "initial";
-        document.getElementById("carvr").style.display = "initial";
-        document.getElementById("icxr").style.display = "initial";
-        document.getElementById("mygithub").style.display = "initial";
-        document.getElementById("aboutme").style.display = "inherit";
-          document.getElementById("enterbutton").style.visibility = "hidden";
-          
-        }
+            pinkBackgrounds.forEach(function(el) {
+              el.style.backgroundColor = "rgba(255, 199, 245, 0.9)"; // reset color to pink transparency
+            });
 
-        document.getElementById("enterbutton").onclick = function() {buttonclick()};
-        
-        function buttonclick() {
-        window.location.href = "https://ashleyinvr.glitch.me";
-    }
-      }
-    </script>
+            document.getElementsByTagName('H1')[0].style.color = "black";
+            document.getElementById("mylinkedin").style.display = "initial";
+            document.getElementById("myartshop").style.display = "initial";
+            document.getElementById("carvr").style.display = "initial";
+            document.getElementById("icxr").style.display = "initial";
+            document.getElementById("mygithub").style.display = "initial";
+            document.getElementById("aboutme").style.display = "inherit";
+            rendererElement.style.display = "initial";
+            document.getElementById("enterbutton").style.visibility = "hidden";
+          }
+
+          document.getElementById("enterbutton").onclick = function() {buttonclick()};
+          
+          function buttonclick() {
+          window.location.href = "https://ashleyinvr.glitch.me";
+          }
+        }
+      </script>
     </header>
 
     <!-- About Me -->

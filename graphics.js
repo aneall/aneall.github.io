@@ -1,10 +1,10 @@
 // .js file for Three.js 3D graphic renderings
 
-// Declare the 'scene', 'camera', 'renderer', 'cubes' array as global variables:
+// Declare the 'scene', 'camera', 'renderer', 'models' array as global variables:
 let scene, camera, renderer;
-let cubes = [];
+let models = [];
 
-init(); // Call init() to initialize the scene, camera, renderer, and cubes
+init(); // Call init() to initialize the scene, camera, renderer, and models
 animate(); // Call animate() to execute the rendering loop
 
 // Define init() to setup the content in my scene:
@@ -38,24 +38,38 @@ function init() {
   light.position.set(-100,200,100); // Set the point light's 3D position
   scene.add(light); // Add point light to scene
 
-  // TODO: Add OrbitControls so that we can pan around with the mouse
-  // This requires including OrbitControls script in your HTML or importing it!!!
-  // controls = new THREE.OrbitControls(camera, renderer.domElement);
+  // Declare and initialize orbit 'controls' to pan around the scene with our mouse / trackpad
+  // const controls = new OrbitControls(camera, renderer.domElement); // Based on the OrbitControls.js script
+  // controls.target.set(0, 0, 0); // Adjust these values as needed
 
   // TODO: MAKE THE TRANSPARENT PINK LAYER MATCH UP W OTHER SECTIONS
+
+  // Declare and initialize loader:
+  const gltfLoader = new THREE.GLTFLoader();
   
   // Set up 2D 'grid' of 3D objects:
   for (let x = -10; x <= 10; x += 5) { // looping through x-axis positions
     for (let y = -10; y <= 10; y += 5) { // looping through y-axis positions 
+        // Cube geometry:
+        let cubeGeometry = new THREE.BoxGeometry(1, 1, 1); // Declare and initialize cube's geometry
+        let cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff57cf}); // Declare and initialize cube's material
+        let cube = new THREE.Mesh(cubeGeometry, cubeMaterial); // Creates the cube as a 3D object
+        cube.position.set(x, y, 0); // Set cube's 3D position
+            // Previous bigger grid (15 models): cube.position.set(x, y, 0);
+        models.push(cube); // Adds the first cube to my 'models' array
+        scene.add(cube); // Add cube to scene
 
-      let cubeGeometry = new THREE.BoxGeometry(1, 1, 1); // Declare and initialize cube's geometry
-      let cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff57cf}); // Declare and initialize cube's material
-      let cube = new THREE.Mesh(cubeGeometry, cubeMaterial); // Creates the cube as a 3D object
+        // Teapot geometry (from imported glb):
+        gltfLoader.load('assets/teapot.glb', function(gltf) {
+            const teapot = gltf.scene; // Declare and initialize the 3D model
+            teapot.position.set(1.3*x, 1.5*y, 0); // Define model's 3D position (x, y, z)
+            teapot.scale.set(.4, .4, .4); // Define model's scale (x, y, z)
+            models.push(teapot);
+            scene.add(teapot); // Add model to scene
+        }, undefined, function(error) { // Checking if there's loading errors
+          console.error(error);
+        });
 
-      cube.position.set(x, y, 0); // Set cube's 3D position
-        // Previous bigger grid (15 cubes): cube.position.set(x, y, 0);
-      cubes.push(cube); // Adds the first cube to my 'cubes' array
-      scene.add(cube); // Add cube to scene
     }
   }
 }
@@ -64,12 +78,13 @@ function init() {
 function animate() {
     requestAnimationFrame(animate); // Recursion to continuously call animate()
     
-    // Rotating cubes (objects in the 'cubes' array) around their axes (local rotations):
-    cubes.forEach(function(c, i) {
-        c.rotation.x += 0.02; // increment local rotation about x-axis
-        c.rotation.y += 0.0225; // increment local rotation bout y-axis
-        c.rotation.z += 0.0175; // increment local rotation about z-axis
+    // Rotating models (objects in the 'models' array) around their axes (local rotations):
+    models.forEach(function(m, i) {
+        m.rotation.x += 0.02; // increment local rotation about x-axis
+        m.rotation.y += 0.0225; // increment local rotation bout y-axis
+        m.rotation.z += 0.0175; // increment local rotation about z-axis
   });
 
   renderer.render(scene, camera); // Re-render the scene
 }
+console.log();
