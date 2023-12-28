@@ -1,10 +1,14 @@
 // .js file for Three.js 3D graphic renderings
 
-// Declare the 'scene', 'camera', 'renderer', 'models' array as global variables:
+// Declare the 'scene', 'camera', 'renderer' as global variables:
 let scene, camera, renderer;
-let models = [];
 
-init(); // Call init() to initialize the scene, camera, renderer, and models
+// Declare the 'cubes', 'teapots', and 'oldwells' object arrays as global variables:
+let cubes = [];
+let teapots = [];
+let oldwells = [];
+
+init(); // Call init() to initialize the scene, camera, renderer, and 3D objects
 animate(); // Call animate() to execute the rendering loop
 
 // Define init() to setup the content in my scene:
@@ -47,7 +51,7 @@ function init() {
   // Declare and initialize loader:
   const gltfLoader = new THREE.GLTFLoader();
   
-  // Set up 2D 'grid' of 3D objects:
+  // Set up 2D 'grid' of cube objects:
   for (let x = -10; x <= 10; x += 5) { // looping through x-axis positions
     for (let y = -10; y <= 10; y += 5) { // looping through y-axis positions 
         // Cube geometry:
@@ -55,21 +59,41 @@ function init() {
         let cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff57cf}); // Declare and initialize cube's material
         let cube = new THREE.Mesh(cubeGeometry, cubeMaterial); // Creates the cube as a 3D object
         cube.position.set(x, y, 0); // Set cube's 3D position
-            // Previous bigger grid (15 models): cube.position.set(x, y, 0);
-        models.push(cube); // Adds the first cube to my 'models' array
+            // Previous bigger grid (15 cubes): cube.position.set(x, y, 0);
+        cubes.push(cube); // Adds the first cube to my 'cubes' array
         scene.add(cube); // Add cube to scene
+    }
+  }
 
+  // Set up 2D 'grid' of teapot objects:
+  for (let x = -15; x <= 10; x += 5) { // looping through x-axis positions
+    for (let y = -15; y <= 10; y += 5) { // looping through y-axis positions 
         // Teapot geometry (from imported glb):
         gltfLoader.load('assets/teapot.glb', function(gltf) {
             const teapot = gltf.scene; // Declare and initialize the 3D model
-            teapot.position.set(1.3*x, 1.5*y, 0); // Define model's 3D position (x, y, z)
-            teapot.scale.set(.4, .4, .4); // Define model's scale (x, y, z)
-            models.push(teapot);
+            teapot.position.set(2.5+x, 1+y, 0); // Define model's 3D position (x, y, z)
+            teapot.scale.set(.3, .3, .3); // Define model's scale (x, y, z)
+            teapots.push(teapot);
             scene.add(teapot); // Add model to scene
+        }, undefined, function(error) { // Checking if there's loading errors
+            console.error(error);
+        });
+    }
+  }
+
+  // Set up 2D 'grid' of UNC old well objects:
+  for (let x = -18; x <= 10; x += 5) { // looping through x-axis positions
+    for (let y = -18; y <= 10; y += 5) { // looping through y-axis positions 
+        // UNC Old Well geometry (from imported glb):
+        gltfLoader.load('assets/oldwell.glb', function(gltf) {
+            const oldwell = gltf.scene; // Declare and initialize the 3D model
+            oldwell.position.set(5+x,5+y, 0); // Define model's 3D position (x, y, z)
+            oldwell.scale.set(.1, .1, .1); // Define model's scale (x, y, z)
+            oldwells.push(oldwell);
+            scene.add(oldwell); // Add model to scene
         }, undefined, function(error) { // Checking if there's loading errors
           console.error(error);
         });
-
     }
   }
 }
@@ -78,12 +102,25 @@ function init() {
 function animate() {
     requestAnimationFrame(animate); // Recursion to continuously call animate()
     
-    // Rotating models (objects in the 'models' array) around their axes (local rotations):
-    models.forEach(function(m, i) {
-        m.rotation.x += 0.02; // increment local rotation about x-axis
-        m.rotation.y += 0.0225; // increment local rotation bout y-axis
-        m.rotation.z += 0.0175; // increment local rotation about z-axis
+    // Rotating cubes (objects in the 'cubes' array) around their axes (local rotations):
+    cubes.forEach(function(c, i) {
+        c.rotation.x += 0.02; // increment local rotation about x-axis
+        c.rotation.y += 0.0225; // increment local rotation bout y-axis
+        c.rotation.z += 0.0175; // increment local rotation about z-axis
   });
+
+    // Rotating teapots (objects in the 'teapots' array) around their axes (local rotations):
+    teapots.forEach(function(t, i) {
+        t.rotation.x += 0.02; // increment local rotation about x-axis
+        t.rotation.y += 0.0225; // increment local rotation bout y-axis
+        t.rotation.z += 0.0175; // increment local rotation about z-axis
+    });
+
+    // Rotating wells (objects in the 'oldwells' array) around their axes (local rotations):
+    oldwells.forEach(function(o, i) {
+        o.rotation.y += 0.0025; // increment local rotation bout y-axis
+        // o.rotation.z += 0.0175; // increment local rotation about z-axis
+    });
 
   renderer.render(scene, camera); // Re-render the scene
 }
