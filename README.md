@@ -12,9 +12,12 @@ If you pay close attention, you'll notice three things:
 2. My picture is one that I captured and edited myself
 3. If you click on this picture, a new option in the GUI will appear to [Enter](https://ashleyinvr.glitch.me) – *would recommened entering if you want to experience my WebXR + WebGL skills directly!*
 
-## Creative Portfolio
+## [XR Experience](https://ashleyinvr.glitch.me)
+_As mentioned above, if you click **Enter**, you will experience an A-Frame app that I created!_
+
+## [Creative Portfolio](https://aneall.github.io/portfolio.html)
 This page is all about my creative work – ranging from textiles and apparel, painting, digital art, music production, 3D modeling, sculpture, and more.
 - I have an extensive collection of artwork, so I recommend checking out the links at the bottom of this particular page if you'd curious!
 
-## Technical Projects
+## [Technical Projects](https://aneall.github.io/projects.html)
 This page is all about my technical work – ranging from hackathons, electronics, fabrication, computer graphics, and other interesting things!
