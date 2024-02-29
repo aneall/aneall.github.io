@@ -44,7 +44,7 @@ button {
 }
 
 .welcome {
-  color: #151c31;
+  color: #151C31;
   animation: fadeIn 2s;
   padding-top: .5%;
   padding-bottom: 1%;
@@ -243,7 +243,7 @@ img {
 
 /* Portfolio.HTML Buttons */
 .info-button {
-  background-color: #ffc7f5;
+  background-color: #151C31;
   color: white;
   padding: 10px 20px; /* text padding for top/bottom, left/right */
   border: none; /* no button border */
@@ -317,7 +317,7 @@ img {
 /* STYLE NAV BAR */
 ul {
   list-style-type: none;
-  background-color: #ffc7f5;
+  background-color: #151C31;
   overflow: hidden;
   padding: 1em;
   
