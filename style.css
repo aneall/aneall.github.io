@@ -10,7 +10,7 @@ canvas {
 #ulnavbar, header, #aboutme, main, footer {
   position: relative;
   z-index: 1; /* Ensures that the navbar, header, 'about me', main, and footer sections are in front of the canvas */
-  background-color: rgba(255, 199, 245, 0.9); /* Cool 'faded' effect for Three.js graphics by making background in front of the canvas transparent! */
+  background-color: rgba(112, 163, 225, 0.9); /* Cool 'faded' effect for Three.js graphics by making background in front of the canvas transparent! */
 }
 
 /* STYLE SECTIONING TAGS */
@@ -34,7 +34,7 @@ h2 {
 }
 
 body {
- background-color: #ffc7f5; 
+ background-color: #7cb6f9; 
   text-align: center;
   cursor: url("assets/flowercursor.png"), auto;
 }
