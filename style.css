@@ -33,6 +33,10 @@ h2 {
   animation: fadeIn 2s;
 }
 
+b {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 body {
  background-color: #70A3E1; 
   text-align: center;
