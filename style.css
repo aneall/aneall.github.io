@@ -50,8 +50,7 @@ button {
 .welcome {
   color: #151C31;
   animation: fadeIn 2s;
-  padding-top: .5%;
-  padding-bottom: 1%;
+  padding-top: 2%;
 }
 
 @keyframes fadeIn {
@@ -165,7 +164,10 @@ img {
 }
 
 .ashley {
-  margin: 2%;
+  margin-top: 2%;
+  margin-bottom: 6%;
+  width: 40%;
+  height: auto;
 }
 .ashley:hover {
   animation: highlightAshley 500ms forwards;
