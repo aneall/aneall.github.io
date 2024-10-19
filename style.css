@@ -333,7 +333,6 @@ ul {
   background-color: #151C31;
   overflow: hidden;
   padding: 1em;
-  
 }
 
 li {
@@ -356,6 +355,13 @@ li a:hover {
   margin-bottom: 5%;
   margin-right: 10%;
   margin-left: 10%;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column; /* stacks items vertically on small screens */
+  align-items: center;
+  justify-content: center;
 }
 
 
