@@ -5,7 +5,7 @@
 let scene, camera, renderer, controls // CONTROLS ADDED
 
 // Declare the 'cubes', 'teapots', and 'oldwells' object arrays as global variables:
-let cubes = [];
+let bunnies = []; // no longer using cubes
 let teapots = [];
 let oldwells = [];
 
@@ -50,22 +50,25 @@ function init() {
   // const controls = new OrbitControls(camera, renderer.domElement); // Based on the OrbitControls.js script
   // controls.target.set(0, 0, 0); // Adjust these values as needed
 
-  // TODO: MAKE THE TRANSPARENT PINK LAYER MATCH UP W OTHER SECTIONS
+  // TODO: MAKE THE TRANSPARENT BLUE LAYER MATCH UP W OTHER SECTIONS
 
   // Declare and initialize loader:
   const gltfLoader = new THREE.GLTFLoader();
   
-  // Set up 2D 'grid' of cube objects:
+  // Set up 2D 'grid' of bunnny objects:
+    // No longer instantiating cubes, using bunnies instead!
   for (let x = -10; x <= 10; x += 5) { // looping through x-axis positions
-    for (let y = -10; y <= 10; y += 5) { // looping through y-axis positions 
-        // Cube geometry:
-        let cubeGeometry = new THREE.BoxGeometry(1, 1, 1); // Declare and initialize cube's geometry
-        let cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff57cf}); // Declare and initialize cube's material
-        let cube = new THREE.Mesh(cubeGeometry, cubeMaterial); // Creates the cube as a 3D object
-        cube.position.set(x, y, 0); // Set cube's 3D position
-            // Previous bigger grid (15 cubes): cube.position.set(x, y, 0);
-        cubes.push(cube); // Adds the first cube to my 'cubes' array
-        scene.add(cube); // Add cube to scene
+    for (let y = -10; y <= 10; y += 5) {
+        // Bunny geometry (from imported glb):
+        gltfLoader.load('assets/bunny.glb', function(gltf) {
+          const bunny = gltf.scene; // Declare and initialize the 3D model
+          bunny.position.set(x, 4+y, 0); // Define model's 3D position (x, y, z)
+          bunny.scale.set(.35, .35, .35); // Define model's scale (x, y, z)
+          bunnies.push(bunny);
+          scene.add(bunny); // Add model to scene
+        }, undefined, function(error) { // Checking if there's loading errors
+          console.error(error);
+        });
     }
   }
 
@@ -109,12 +112,11 @@ function animate() {
     // CONTROLS TEST:
     controls.update();
     
-    // Rotating cubes (objects in the 'cubes' array) around their axes (local rotations):
-    cubes.forEach(function(c, i) {
-        c.rotation.x += 0.02; // increment local rotation about x-axis
-        c.rotation.y += 0.0225; // increment local rotation bout y-axis
-        c.rotation.z += 0.0175; // increment local rotation about z-axis
-  });
+    // Rotating bunnies (objects in the 'bunnies' array) around their axes (local rotations):
+      // No loner rotating cubes, using bunnies instead!
+     bunnies.forEach(function(b, i) {
+      b.rotation.y += 0.02; // increment local rotation bout y-axis
+    });
 
     // Rotating teapots (objects in the 'teapots' array) around their axes (local rotations):
     teapots.forEach(function(t, i) {

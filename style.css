@@ -163,6 +163,13 @@ img {
   animation-fill-mode: forwards;
 }
 
+#myscholar:hover {
+  transform: scale(1.2);
+  animation-name: logo-icon;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
 .ashley {
   margin-top: 2%;
   margin-bottom: 6%;

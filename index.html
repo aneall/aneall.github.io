@@ -10,13 +10,13 @@
           <a href="index.html">Welcome</a>
         </li>
         <li>
-          <a href="portfolio.html">Creative Portfolio</a>
+          <a href="projects.html">Develop</a>
         </li>
         <li>
-          <a href="projects.html">Technical Projects</a>
+          <a href="portfolio.html">Design</a>
         </li>
         <li>
-            <a href="teaching.html">Teaching</a>
+            <a href="teaching.html">Teach</a>
         </li>
         <li>
           <a href="sandbox.html">Sandbox</a>
@@ -24,7 +24,7 @@
       </ul>
     </nav>
     
-    <title>Ashley's Portfolio</title>
+    <title>Ashley Neall</title>
     <meta charset="utf-8" />
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	  <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -51,7 +51,7 @@
     
     <header>
     <h1 class="welcome">Hello there, I'm Ashley!</h1>
-    <h4 style="color: black"; class="explore"> As you explore to learn more about me, click below for an immersive experience</h4>
+    <h4 style="color: black"; class="explore">Click on me for an immersive experience</h4>
     <img class="ashley" id="ashleyvr" src="assets/ashleySophomore.PNG" alt="Ashley out in nature with a headset!" style="border-radius: 50%;"/>
 
       <script>
@@ -78,13 +78,14 @@
             document.getElementById("carvr").style.display = "none";
             document.getElementById("icxr").style.display = "none";
             document.getElementById("mygithub").style.display = "none";
+            document.getElementById("myscholar").style.display = "none";
             document.getElementById("aboutme").style.display = "none";
             rendererElement.style.display = "none";
               
 
             while (i == 0) {
               var mybutton = document.createElement("BUTTON");
-              var buttontext = document.createTextNode("ENTER XR");
+              var buttontext = document.createTextNode("ENTER");
               mybutton.id = "enterbutton";
               mybutton.appendChild(buttontext);
               document.body.appendChild(mybutton);
@@ -107,6 +108,7 @@
             document.getElementById("carvr").style.display = "initial";
             document.getElementById("icxr").style.display = "initial";
             document.getElementById("mygithub").style.display = "initial";
+            document.getElementById("myscholar").style.display = "initial";
             document.getElementById("aboutme").style.display = "inherit";
             rendererElement.style.display = "initial";
             document.getElementById("enterbutton").style.visibility = "hidden";
@@ -125,21 +127,20 @@
     <section id="aboutme">
       <h2>About Me</h2>
       <p>
-          My name is Ashley Neall, and I'm a current Sophomore at
+          My name is Ashley Neall, and I'm a Junior at
           <a style="color: #96D4F8;" href="https://cs.unc.edu" target="_blank">UNC-Chapel Hill</a> studying <b>Computer Science</b>, <b>Neuroscience</b>, and <b>Applied Engineering</b>.
-          I'm passionate about computer graphics + vision, optics, haptics, and brain-computer interfaces – all of which are crucial to the field of XR!
-          If I'm not developing XR experiences, I'm busy leading <a style="color: #96D4F8;" href="https://uncarvr.org" target="_blank">Carolina AR/VR (UNC's XR student organization)</a>
-          and <a style="color: #401f9b;" href="https://www.icxr.org/" target="_blank">ICXR (an international + intercollegiate XR organization)</a>, 
-          researching in the <a style="color: #96D4F8;" href="https://telepresence.web.unc.edu" target="_blank">Telepresence Lab</a>, working on
-          <a style="color: #f335c0;" href="projects.html" target="_blank">projects</a>, or creating 
-          <a style="color: #f335c0;" href="portfolio.html" target="_blank">art</a>!
+          I'm passionate about computer graphics, computational displays (imaging, optics, haptics, BCIs), and human perception – all of which are crucial to improve XR systems.
+          You'll find me <a style="color: #96D4F8;" href="https://telepresence.web.unc.edu" target="_blank">researching</a> while
+          leading <a style="color: #96D4F8;" href="https://uncarvr.org" target="_blank">Carolina AR/VR</a>
+          and <a style="color: #401f9b;" href="https://www.icxr.org/" target="_blank">Intercollegiate XR</a>.
+          In my free time, I still research and <a style="color: #ffc6f0;" href="projects.html">develop</a> – but I also <a style="color: #ffc6f0;" href="portfolio.html">design</a> and <a style="color: #ffc6f0;" href="teaching.html">teach</a> :)
       </p>
   </section>
 
 
     
     <main>
-      <a href="https://www.ashleynarts.com"> <img id="myartshop" src="assets/ashleynarts.jpg" width=10% height=10% style="border-radius: 50%;"/></a>
+      <a href="https://society6.com/a/artists/ashleynarts/shop"> <img id="myartshop" src="assets/ashleynarts.jpg" width=10% height=10% style="border-radius: 50%;"/></a>
     
       <a href="https://www.linkedin.com/in/ashley-neall"> <img id="mylinkedin" src="assets/linkedin.svg.png" width=10% height=10% style="border-radius: 50%;"/></a>
 
@@ -149,7 +150,7 @@
 
       <a href="https://github.com/aneall"> <img id="mygithub" src="assets/github.png" width=10% height=10% style="border: 0;"/></a>
 
-      <a href="https://scholar.google.com/citations?user=UgeBGw4AAAAJ&hl=en&oi=ao"> <img id="mygithub" src="assets/googlescholar.png" width=10% height=10% style="border: 0;"/></a>
+      <a href="https://scholar.google.com/citations?user=UgeBGw4AAAAJ&hl=en&oi=ao"> <img id="myscholar" src="assets/googlescholar.png" width=10% height=10% style="border: 0;"/></a>
       
 
     </main>
