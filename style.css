@@ -47,6 +47,27 @@ button {
  font-size: 120%;
 }
 
+/* GENERAL links (a) */
+a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none; /* get rid of hyperlink underline */
+  font-family: inherit;
+  text-decoration: none; /* hyperlink underline while hovering */
+}
+
+#UNClink:hover {
+  color: #96D4F8;
+}
+
+#ICXRlink:hover {
+  color: #681aed;
+}
+
+#misclink:hover {
+  color: #ffc6f0;
+}
+
 .welcome {
   color: #151C31;
   animation: fadeIn 2s;
@@ -214,18 +235,6 @@ img {
   font-family: 'Courier New', Courier, monospace;
 }
 
-#aboutme a {
-  color: inherit;
-  font-weight: bold;
-  text-decoration: none; /* get rid of hyperlink underline */
-  font-family: inherit;
-}
-
-#aboutme a:hover {
-  text-decoration: underline; /* hyperlink underline while hovering */
-}
-
-
 
 /* PORTFOLIO.HTML */
 
@@ -246,6 +255,15 @@ img {
     animation: highlightImage 500ms forwards;
 }
 
+/* Research.HTML experimenting */
+.researchtitle {
+  text-align: center;
+  width: 70%;
+  margin-top: 2%;
+  margin-left: 14%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
 /* Portfolio.HTML Text */
 .description {
   flex: 1;
@@ -253,6 +271,7 @@ img {
   margin-bottom: 5%; /* space between description and buttons */
   width: 100%;
 }
+
 
 /* Portfolio.HTML Buttons */
 .info-button {
@@ -357,13 +376,6 @@ li a:hover {
   margin-left: 10%;
 }
 
-.navbar {
-  display: flex;
-  flex-direction: column; /* stacks items vertically on small screens */
-  align-items: center;
-  justify-content: center;
-}
-
 
 /* DESIGN CONSIDERATIONS */ 
 
@@ -413,12 +425,14 @@ li a:hover {
   flex-direction: column; /* stack verticall */
   align-items: start; /* alignment starts at left side */
   margin-bottom: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .buttoncontainer {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
   width: 100%; /* enables button row to take up more space than length of description */
 }
 
@@ -438,10 +452,6 @@ li a:hover {
       width: 100%;
       margin-bottom: 10px;
   }
-
-  .description {
-    text-align: center;
-}
 
   .projects {
     width: 100%;

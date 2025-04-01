@@ -17,27 +17,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 </style>
 
-    <nav>
-      <ul>
-        <li>
-          <a href="index.html">Welcome</a>
-        </li>
-        <li>
-          <a href="portfolio.html">Creative Portfolio</a>
-        </li>
-        <li>
-          <a href="projects.html">Technical Projects</a>
-        </li>
-        <li>
-          <a href="teaching.html">Teaching</a>
-        </li>
-      </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li>
+        <a href="index.html">Welcome</a>
+      </li>
+      <li>
+        <a href="research.html">Research</a>
+      </li>
+      <li>
+        <a href="projects.html">Develop</a>
+      </li>
+      <li>
+        <a href="portfolio.html">Design</a>
+      </li>
+      <li>
+          <a href="teaching.html">Teach</a>
+      </li>
+      <li>
+        <a href="sandbox.html">Sandbox</a>
+    </li>
+    </ul>
+  </nav>
 
     <meta charset="utf-8" />
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	  <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AR Neurorehabilitation</title>
+    <title>My Research</title>
 
     <!-- webpage's stylesheet -->
 	  <link rel="stylesheet" href="/style.css" />
@@ -46,11 +52,15 @@
 	  <script src="/script.js" defer></script>
   </head>
 
-  <body style="background-color: #E1A6FF";>
+  <body style="background-color: #70A3E1";>
     <section style="background-color: #ffc7f5";>
       <h2> 
-        <br></br>
-        AR Neurorehabilitation Research</h2>
+      <br></br>
+      My Research</h2>
+      <div>
+        <p class="researchtitle"> Since my first semester of college, I have been researching in the <a id="UNClink" href="https://telepresence.web.unc.edu" target="_blank"> UNC Graphics and Virtual Group</a> advised by Dr. Henry Fuchs. Now as a Junior undergraduate, I have further demonstrated my research skills via summer research at Stanford University, attending research conferences, and collaborating with professors and other students to publish work. Currently, I am working on my Honors Thesis as I continue my endeavors in XR research.</p>
+      </div>
+      <br></br>
       <div class="pinkcurve">
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
@@ -58,12 +68,40 @@
       </div>
     </section>
 
+    <!-- section for ARAudio -->
+    <div class="overallcontainer">
+      <a href="https://ieeevr.org/2025/program/papers/#6"> <img class="projects" id="poster" src="assets/AudioAR.png"/></a>
+      
+      <div class="textcontainer">
+        <h3 class="description">Multimodal Neural Acoustic Fields for Immersive Virtual Reality</h3>
+        <h4 class="description">IEEE VR 2025 Best Paper Honorable Mention (TVCG) </h4>
+        <div class="buttoncontainer">
+          <a href="https://ieeexplore.ieee.org/document/10938352" class="info-button">Paper</a>
+        </div> 
+      </div>
+    </div>
+
+    <!-- section for 2024 Stanford REU -->
+    <div class="overallcontainer">
+      <a href="https://docs.google.com/presentation/d/1jN-zJaMsR5Y1YqFg5eM0KXX56WXH61OMZZNJU3UFQsQ/edit?usp=sharing"> <img class="projects" id="poster" src="assets/ProjecTrack.png"/></a>
+      
+      <div class="textcontainer">
+        <h3 class="description">ProjecTrack: An IR Tool Tracking-controlled
+            Projector System for OST Immersion</h3>
+        <h4 class="description">Stanford 2024 REU Project</h4>
+        <div class="buttoncontainer">
+          <a href="https://drive.google.com/file/d/1lNM6dlBV98KuH6cGu-YpyXZt6UTUKCey/view?usp=sharing" class="info-button">Poster</a>
+          <a href="https://docs.google.com/presentation/d/1jN-zJaMsR5Y1YqFg5eM0KXX56WXH61OMZZNJU3UFQsQ/edit?usp=sharing" class="info-button">Presentation</a>
+        </div> 
+      </div>
+    </div>
+
     <!-- section for PD-Insighter -->
     <div class="overallcontainer">
       <a href="https://arxiv.org/pdf/2404.10661.pdf"> <img class="projects" id="poster" src="assets/sigchiGraphic.png"/></a>
       
       <div class="textcontainer">
-        <p class="description">PD-Insighter : A Visual Analytics System to Monitor Daily Actions for Parkinson's Disease Treatment</p>
+        <h3 class="description">PD-Insighter : A Visual Analytics System to Monitor Daily Actions for Parkinson's Disease Treatment</h3>
         <h4 class="description">SIGCHI 2024 Accepted Paper</h4>
         <div class="buttoncontainer">
           <a href="https://doi.org/10.1145/3613904.3642215" class="info-button">Paper</a>
@@ -77,7 +115,7 @@
       <a href="https://our.unc.edu/wp-content/uploads/sites/1148/2023/04/NEALL-Poster-2O23.pdf"> <img class="projects" id="poster" src="assets/arneurorehab-poster.png"/></a>
       
       <div class="textcontainer">
-        <p class="description">Augmented Reality Neurorehabilitation System for Parkinson's Disease</p>
+        <h3 class="description">Augmented Reality Neurorehabilitation System for Parkinson's Disease</h3>
         <h4 class="description">UNC Celebration of Undergraduate Research 2023 Accepted Poster</h4>
         <div class="buttoncontainer">
           <a href="https://our.unc.edu/wp-content/uploads/sites/1148/2023/04/NEALL-Poster-2O23.pdf" class="info-button">Poster</a>
@@ -90,7 +128,7 @@
     
 <footer>
       <h5>
-       Made with ❤︎ by Ashley Neall © 2024
+       Made with ❤︎ by Ashley Neall © 2025
     </h5>
 </footer>
     

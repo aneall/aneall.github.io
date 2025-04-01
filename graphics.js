@@ -4,8 +4,8 @@
 // Declare the 'scene', 'camera', 'renderer' as global variables:
 let scene, camera, renderer, controls // CONTROLS ADDED
 
-// Declare the 'cubes', 'teapots', and 'oldwells' object arrays as global variables:
-let bunnies = []; // no longer using cubes
+// Declare the 'bunnies', 'teapots', and 'oldwells' object arrays as global variables:
+let bunnies = [];
 let teapots = [];
 let oldwells = [];
 
