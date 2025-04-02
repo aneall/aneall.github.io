@@ -13,13 +13,13 @@
           <a href="research.html">Research</a>
         </li>
         <li>
-          <a href="projects.html">Develop</a>
+          <a href="projects.html">Projects</a>
         </li>
         <li>
-          <a href="portfolio.html">Design</a>
+          <a href="designs.html">Designs</a>
         </li>
         <li>
-            <a href="teaching.html">Teach</a>
+            <a href="teaching.html">Teaching</a>
         </li>
         <li>
           <a href="sandbox.html">Sandbox</a>
@@ -50,11 +50,10 @@
 
   </head>
   
-  <body>
+  <body id="indexbody">
     
     <header>
     <h1 class="welcome">Hello there, I'm Ashley.</h1>
-    <h4 style="color: black"; class="explore">Click on my picture to enter an immersive experience</h4>
     <img class="ashley" id="ashleyvr" src="assets/ashleySophomore.PNG" alt="Ashley out in nature with a headset!" style="border-radius: 50%;"/>
 
       <script>
@@ -77,7 +76,7 @@
 
             document.getElementsByTagName('H1')[0].style.color = "black";
             document.getElementById("mylinkedin").style.display = "none";
-            document.getElementById("myartshop").style.display = "none";
+            document.getElementById("myemail").style.display = "none";
             document.getElementById("carvr").style.display = "none";
             document.getElementById("icxr").style.display = "none";
             document.getElementById("mygithub").style.display = "none";
@@ -88,7 +87,7 @@
 
             while (i == 0) {
               var mybutton = document.createElement("BUTTON");
-              var buttontext = document.createTextNode("ENTER");
+              var buttontext = document.createTextNode("Hey, enter 3D here");
               mybutton.id = "enterbutton";
               mybutton.appendChild(buttontext);
               document.body.appendChild(mybutton);
@@ -107,7 +106,7 @@
 
             document.getElementsByTagName('H1')[0].style.color = "black";
             document.getElementById("mylinkedin").style.display = "initial";
-            document.getElementById("myartshop").style.display = "initial";
+            document.getElementById("myemail").style.display = "initial";
             document.getElementById("carvr").style.display = "initial";
             document.getElementById("icxr").style.display = "initial";
             document.getElementById("mygithub").style.display = "initial";
@@ -133,39 +132,51 @@
           My name is Ashley Neall, and I'm a Junior at
           <a id="UNClink" href="https://cs.unc.edu" target="_blank">UNC-Chapel Hill</a> studying <b>Computer Science</b>, <b>Neuroscience</b>, and <b>Applied Engineering</b>.
           I'm passionate about computer graphics, computational displays (imaging, optics, haptics, BCIs), and human perception – all of which are crucial to improve XR systems.
-          You'll find me <a id="UNClink" href="research.html" target="_blank">researching</a> while
+          You'll find me <a id="UNClink" href="research.html">researching</a> while
           leading <a id="UNClink" href="https://uncarvr.org" target="_blank">Carolina AR/VR</a>
           and <a id="ICXRlink" href="https://www.icxr.org/" target="_blank">Intercollegiate XR</a>.
-          In my free time, I still <a id="misclink" href="projects.html">develop</a> – but I also <a id="misclink" href="portfolio.html">design</a> and <a id="misclink" href="teaching.html">teach</a> :)
+          In my free time, I still <a id="misclink" href="projects.html">develop</a>, but I also <a id="misclink" href="designs.html">design</a> and <a id="misclink" href="teaching.html">teach</a> :)
       </p>
+
+      <br>
 
       <p>
-        Fun fact: My passion for XR began in high school, where I created <a id="misclink" href="https://apeximmersive.weebly.com/" target="_blank">Apex Immersive</a> – the first XR student organization in North Carolina's largest county. My young leadership endeavors led me to dedicate my freshman year of college to revitalizing Carolina AR/VR.
-
+        Fun fact: my passion for XR began in high school, where I created <a id="misclink" href="https://apeximmersive.weebly.com/" target="_blank">Apex Immersive</a> – the first XR student organization in North Carolina's largest public school system. My leadership endeavors led me to revitalize Carolina AR/VR as a freshman in college and dive into research.
       </p>
+
+      <p>Discover the two university-level XR student organizations I lead:</p>
+    
+
   </section>
-
-
     
-    <main>
-      <a href="https://society6.com/a/artists/ashleynarts/shop"> <img id="myartshop" src="assets/ashleynarts.jpg" width=10% height=10% style="border-radius: 50%;"/></a>
-    
-      <a href="https://www.linkedin.com/in/ashley-neall"> <img id="mylinkedin" src="assets/linkedin.svg.png" width=10% height=10% style="border-radius: 50%;"/></a>
+    <main id="indexmain">
 
-      <a href="https://www.icxr.org"> <img id="icxr" src="assets/icxr.png" width=10% height=10% style="border-radius: 50%;"/></a>
+      <a href="https://www.icxr.org"> <img id="icxr" src="assets/icxr.png" width=9% height=9% style="border-radius: 50%;"/></a>
 
       <a href="https://uncarvr.org"> <img id="carvr" src="assets/carvr.png" width=11% height=11% style="border: 0;"/></a>
 
-      <a href="https://github.com/aneall"> <img id="mygithub" src="assets/github.png" width=10% height=10% style="border: 0;"/></a>
-
-      <a href="https://scholar.google.com/citations?user=UgeBGw4AAAAJ&hl=en&oi=ao"> <img id="myscholar" src="assets/googlescholar.png" width=10% height=10% style="border: 0;"/></a>
-      
-
     </main>
+
+    <section id="aboutme">
+
+      <p>
+        Connect with and explore more about me below:
+      </p>
+
+    </section>
     
     <div></div>
 
-    <footer>
+    <footer id="indexfooter">
+
+      <a href="https://scholar.google.com/citations?user=UgeBGw4AAAAJ&hl=en&oi=ao"> <img id="myscholar" src="assets/googlescholar.png" width=3.5% height=3.5% style="border: 0;"/></a>
+
+      <a href="https://github.com/aneall"> <img id="mygithub" src="assets/github.png" width=4% height=4% style="border: 0;"/></a>
+
+      <a href="https://www.linkedin.com/in/ashley-neall"> <img id="mylinkedin" src="assets/linkedin.png" width=5% height=5% style="border: 0;"/></a>
+
+      <a href="mailto:aneall@unc.edu"><img id="myemail" src="assets/emailtest.png" width=5% height=5% style="border: 0;"/></a>
+      
       <h5>
        Made with ❤︎ by Ashley Neall © 2025
     </h5>
