@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="holoshader.js"></script>
+    <script src="irishader.js"></script>
+    <script src="applyshaders.js"></script>
+    
+    <script src="color-toggle.js"></script>
+    <script src="navigate-on-click.js"></script>
+    <script src="target-marker.js"></script>
+  </head>
+
+  <body>
+    
+    <a-scene cursor="rayOrigin: mouse">
+      
+      <a-plane position="0 .45 0" rotation="-90 0 0" width="50" height="30" color="#FA9AFF"></a-plane>
+        <! we rotate by "-90" so that our plane is vertical>
+      
+      <a-sky src="https://cdn.glitch.global/5f61a17b-7aef-4cfa-8ca4-688d581e26bc/skybox.jpeg?v=1729375807665"></a-sky>
+      
+      <a-assets>
+        <a-asset-item 
+          id="oldwell"
+          response-type="arraybuffer"
+          src="https://cdn.glitch.global/5f61a17b-7aef-4cfa-8ca4-688d581e26bc/smoothoriginal-oldwell.glb?v=1703801359081">
+        </a-asset-item>
+        
+        <a-asset-item 
+          id="bunny"
+          response-type="arraybuffer"
+          src="https://cdn.glitch.global/5f61a17b-7aef-4cfa-8ca4-688d581e26bc/bunny.glb?v=1729370931704">
+        </a-asset-item>
+        
+        <a-asset-item
+          id="ashleyVR"
+          response-type="arraybuffer"
+          src="https://cdn.glitch.global/5f61a17b-7aef-4cfa-8ca4-688d581e26bc/ashleyVR-updated.glb?v=1703961335809">
+        </a-asset-item>
+        
+        <a-asset-item
+          id="backto2D"
+          response-type="arraybuffer"
+          src="https://cdn.glitch.global/5f61a17b-7aef-4cfa-8ca4-688d581e26bc/backto2d?v=1676351710669">
+        </a-asset-item>
+        
+        <a-asset-item
+          id="tree"
+          response-type="arraybuffer"
+          src="https://cdn.glitch.global/5f61a17b-7aef-4cfa-8ca4-688d581e26bc/bluetree1.glb?v=1702871065359">
+        </a-asset-item>
+        
+        <a-asset-item
+          id="teapot"
+          response-type="arraybuffer"
+          src="https://cdn.glitch.global/5f61a17b-7aef-4cfa-8ca4-688d581e26bc/teapot.glb?v=1703964629058">
+        </a-asset-item>
+      </a-assets>
+      
+      <a-entity gltf-model="#bunny" scale=".1 .1 .1" position="2 .5 -6" target-marker></a-entity>
+      <a-entity gltf-model="#oldwell" scale=".3 .3 .3" position="-1 .4 -6" target-marker></a-entity>
+      <a-entity gltf-model="#ashleyVR" scale="1 1 1" position="0 .45 -5" rotation="0 300 0"></a-entity>
+      <a-entity gltf-model="#backto2D" navigate-on-click="url: https://aneall.github.io" scale="3 3 3" position="1 2 -5" rotation="0 110 0" animation="property: rotation; from: 0 110 0; to: 0 470 0; loop: true; dur: 5000; easing: linear"></a-entity>
+      
+      <!-- models with custom shaders; loaded meshes MUST use 'apply iridescent' and 'shader-fresnel' -->
+      <a-entity gltf-model="#teapot" scale=".1 .1 .1" position="3 .5 -6" target-marker></a-entity>
+      
+      <a-box position=".8 1.7 -5" material="shader: holographic;" shader-time scale=".2 .2 .2" animation="property: rotation; from: 0 0 0; to: 360 360 0; loop: true; dur: 3000; easing: linear"></a-box>
+    
+      
+      <a-entity id="rig">
+        <! we only want to manipulate the camera>
+        <a-entity camera look-controls wasd-controls="acceleration: 20; easing: 5" position="0 2 0">
+          <a-cursor id="cursor" raycaster fuse="true" fusertimeout="300">
+          <! this will allow a raycaster occur everytime we click on the screen (so we can grab stuff) and time is in milliseconds>
+          </a-cursor>
+        </a-entity>
+      </a-entity>
+      
+      <a-entity light="type: spot; color: D6ECFE; intensity: .5" position="1 5 -7" rotation="-30 180 90" > </a-entity>
+      <a-entity light="type: directional; color: #4B87FF; intensity: .4" position="1 1.8 -1.2" rotation="-30 120 0" > </a-entity>
+      <a-entity light="type: directional; color: #4B87FF; intensity: .4" position="2 7 -8" rotation="-30 120 0" > </a-entity>
+      <a-entity light="type: ambient; color: #505AF3; intensity: .4" position="1 1.8 -1.2"> </a-entity>
+      <a-entity light="type: ambient; color: #FFFFFF; intensity: .3" position="0 5 0"> </a-entity>
+      
+      
+      <a-gui-flex-containter panel-color="pink" align-items="middle" flex-direction="row" width="3" height="2" position="1 1 1">
+        <a-gui-button value="C"></a-gui-button>
+      </a-gui-flex-containter>
+      
+    </a-scene>
+    
+  </body>
+  
+</html>
