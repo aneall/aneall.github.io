@@ -4,13 +4,13 @@
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-    <script src="holoshader.js"></script>
+    <script src="ashleyinvr/holoshader.js"></script>
     <script src="irishader.js"></script>
     <script src="applyshaders.js"></script>
     
-    <script src="color-toggle.js"></script>
-    <script src="navigate-on-click.js"></script>
-    <script src="target-marker.js"></script>
+    <script src="ashleyinvr/color-toggle.js"></script>
+    <script src="ashleyinvr/navigate-on-click.js"></script>
+    <script src="ashleyinvr/target-marker.js"></script>
   </head>
 
   <body>
@@ -63,7 +63,7 @@
       <a-entity gltf-model="#bunny" scale=".1 .1 .1" position="2 .5 -6" target-marker></a-entity>
       <a-entity gltf-model="#oldwell" scale=".3 .3 .3" position="-1 .4 -6" target-marker></a-entity>
       <a-entity gltf-model="#ashleyVR" scale="1 1 1" position="0 .45 -5" rotation="0 300 0"></a-entity>
-      <a-entity gltf-model="#backto2D" navigate-on-click="url: https://aneall.github.io" scale="3 3 3" position="1 2 -5" rotation="0 110 0" animation="property: rotation; from: 0 110 0; to: 0 470 0; loop: true; dur: 5000; easing: linear"></a-entity>
+      <a-entity gltf-model="#backto2D" navigate-on-click="url: index.html" scale="3 3 3" position="1 2 -5" rotation="0 110 0" animation="property: rotation; from: 0 110 0; to: 0 470 0; loop: true; dur: 5000; easing: linear"></a-entity>
       
       <!-- models with custom shaders; loaded meshes MUST use 'apply iridescent' and 'shader-fresnel' -->
       <a-entity gltf-model="#teapot" scale=".1 .1 .1" position="3 .5 -6" target-marker></a-entity>
