@@ -6,8 +6,11 @@
     <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/x-icon">
 
 
-    <nav>
-      <ul>
+    <nav class="site-nav">
+      <input type="checkbox" id="navcheck" class="navcheck" aria-label="Toggle navigation">
+      <label for="navcheck" class="hamburger" aria-hidden="true"><span></span><span></span><span></span></label>
+
+      <ul id="ulnavbar">
         <li>
           <a href="index.html">Welcome</a>
         </li>
@@ -21,11 +24,11 @@
           <a href="designs.html">Designs</a>
         </li>
         <li>
-          <a href="teaching.html">Teaching</a>
+            <a href="teaching.html">Teaching</a>
         </li>
         <li>
           <a href="sandbox.html">Sandbox</a>
-        </li>
+      </li>
       </ul>
     </nav>
 
@@ -34,7 +37,7 @@
     <title>Three.js Sandbox</title>
 
 </head>
-<body>
+<body id="sanbox-graphics">
 
     <!-- linking stylesheet -->
 	  <link rel="stylesheet" href="/style.css" />

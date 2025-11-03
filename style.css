@@ -7,7 +7,7 @@ canvas {
   /* when the canvas is at this layer, orbit controls don't work! */
 }
 
-#ulnavbar, #aboutme, #indexmain, #indexfooter, header {
+#aboutme, #indexmain, #indexfooter, header {
   position: relative;
   z-index: 1; /* Ensures that the 'navigation bar' and header sections are in front of the canvas */
   background-color: rgba(112, 163, 225, 0.9); /* Cool 'faded' effect for Three.js graphics by making background in front of the canvas transparent! */
@@ -68,7 +68,7 @@ a {
 }
 
 #UNClink:hover {
-  color: #96D4F8;
+  color: #ffffff;
 }
 
 #ICXRlink:hover {
@@ -234,9 +234,9 @@ img {
 }
 
 .ashley {
-  margin-top: 2%;
-  margin-bottom: 6%;
-  width: 40%;
+  margin-top: 1%;
+  margin-bottom: 5%;
+  width: 27%;
   height: auto;
 }
 .ashley:hover {
@@ -483,9 +483,69 @@ li a:hover {
   .projects {
     width: 100%;
     margin-bottom: 10px;
-}
+  } 
 
 .projectdescription {
   text-align: center;
+  }
 }
+
+/* TESTING FOR MOBILE NAV BAR */
+.hamburger,
+.navcheck {
+  display: none;
+}
+
+.site-nav {
+  position: relative;
+  z-index: 3;
+  background-color: #151C31;
+}
+
+/* MOBILE ONLY */
+@media (max-width: 900px) {
+  /* show hamburger button */
+  .hamburger {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 14px;
+    cursor: pointer;
+  }
+  .hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+  }
+
+  /* collapse navigation bar by default */
+  #ulnavbar {
+    display: none;              /* hidden until toggled */
+    flex-direction: column;     /* vertical list */
+    gap: 0.75rem;               /* spaced out items */
+    padding: 0.75rem 0;         /* tighter padding for dropdown */
+  }
+
+  /* display navigation bar when toggled in mobile interfaces */
+  .navcheck:checked ~ #ulnavbar {
+    display: flex;
+  }
+
+  /* full-width items: */
+  #ulnavbar li {
+    display: block;
+  }
+  #ulnavbar li a {
+    display: block;
+    padding: 14px 18px;
+    font-size: 1.4rem;
+  }
+
+  /* designate navigation bar as fixed*/
+  .site-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+  }
 }

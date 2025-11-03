@@ -1,47 +1,63 @@
 // .js file for Three.js 3D graphic renderings
 // Use https://unpkg.com/browse/three@0.128.0/ to find more Three.js addons!
 
-// Declare the 'scene', 'camera', 'renderer' as global variables:
+// 1. Declare the 'scene', 'camera', 'renderer' as global variables:
 let scene, camera, renderer, controls // CONTROLS ADDED
 
-// Declare the 'bunnies', 'teapots', and 'oldwells' object arrays as global variables:
+// 2. Declare the 'bunnies', 'teapots', and 'oldwells' object arrays as global variables:
 let bunnies = [];
 let teapots = [];
 let oldwells = [];
 
-init(); // Call init() to initialize the scene, camera, renderer, and 3D objects
-animate(); // Call animate() to execute the rendering loop
+// 3. Handle 3D graphics container formatting for homepage (index.html) vs sandbox page (sandbox.html):
+const container = document.getElementById('home-graphics') || document.body; // get index.html container ('home-graphics' id) or sandbox.hmtl container (body)
 
-// Define init() to setup the content in my scene:
+// 3.1 Define getContainerSize() function to get given container's width and height:
+function getContainerSize() {
+  if (container === document.body) {
+    return { width: window.innerWidth, height: window.innerHeight }; // if sandbox.html (body container), use viewpoort size
+  } else {
+    const rect = container.getBoundingClientRect(); // if index.html ('home-graphics' container), use container's bounding rectangle
+
+    // If container height is 0, set height to container's scroll height or 60% viewport height:
+    const h = rect.height || container.scrollHeight || window.innerHeight * 0.6;
+    return { width: rect.width, height: h };
+  }
+}
+
+// 4. Call init() and animate() functions to setup and render the 3D scene:
+init(); // initialize the scene, camera, renderer, and 3D objects
+animate(); // execute the rendering loop
+
+// 5. Define init() to setup the content in my scene:
 function init() {
   scene = new THREE.Scene(); // Define scene
-  const WIDTH = window.innerWidth, HEIGHT = window.innerHeight; // Set scene size
+  const { width: WIDTH, height: HEIGHT } = getContainerSize(); // get container size (width, height)
 
   renderer = new THREE.WebGLRenderer({antialias: true}); // Define renderer w/ antialiasing
   renderer.setSize(WIDTH, HEIGHT); // Define renderer viewport size
-  document.body.appendChild(renderer.domElement); // Append renderer's canvas element to DOM
+  container.appendChild(renderer.domElement); // Append renderer's canvas element to container
 
   camera = new THREE.PerspectiveCamera(45, WIDTH / HEIGHT, 0.1, 20000); // Define perspective camera (45 FOV, aspect ratio, near plane, far plane)
   console.log(); // DEBUGGING FOR CONTROLS
   controls = new THREE.OrbitControls(camera, renderer.domElement);
-  camera.position.set(0, 0, 18); // Define camera's 3D position (x, y, z)
+  camera.position.set(0, 0, 14); // Define camera's 3D position (x, y, z)
   scene.add(camera); // Add camera to scene (makes the camera's FOV the FOV for the viewport)
   controls.update();
 
-  // Define event listener that resizes the renderer with the browser window
+  // 6. Define event listener that resizes the renderer with the browser window:
   window.addEventListener('resize', function() {
-    var WIDTH = window.innerWidth, HEIGHT = window.innerHeight; // Retrieve width and height of browser window
-    
-    renderer.setSize(WIDTH, HEIGHT); // Set the renderer viewport's size based on browser window
-    camera.aspect = WIDTH / HEIGHT; // Set the camera's aspect ratio based on the browser window
-    camera.updateProjectionMatrix(); // Compute the camera's perspective projection matrix with the new aspect ratio value
+    const { width, height } = getContainerSize(); // retrieve container size (width, height)
+    renderer.setSize(width, height); // set the renderer viewport's size based on container size
+    camera.aspect = width / height; // set the camera's aspect ratio based on the container size
+    camera.updateProjectionMatrix(); // compute the camera's perspective projection matrix with the new aspect ratio value
   });
 
-  // Set scene's background color:
+  // 7. Set scene's background color:
   renderer.setClearColor(0xffffff, 1);
   // change to 0xffc7f5 once done!
 
-  // Setting up scene light(s):
+  // 8. Setting up scene light(s):
   let light = new THREE.PointLight(0xffffff); // Declare and initalize a point light
   light.position.set(-100,200,100); // Set the point light's 3D position
   scene.add(light); // Add point light to scene
@@ -49,8 +65,7 @@ function init() {
   // Declare and initialize orbit 'controls' to pan around the scene with our mouse / trackpad
   // const controls = new OrbitControls(camera, renderer.domElement); // Based on the OrbitControls.js script
   // controls.target.set(0, 0, 0); // Adjust these values as needed
-
-  // TODO: MAKE THE TRANSPARENT BLUE LAYER MATCH UP W OTHER SECTIONS
+  
 
   // Declare and initialize loader:
   const gltfLoader = new THREE.GLTFLoader();

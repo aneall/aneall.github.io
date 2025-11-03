@@ -4,8 +4,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Merienda:wght@800&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/x-icon">
 
-    <nav>
-      <ul>
+    <nav class="site-nav">
+      <input type="checkbox" id="navcheck" class="navcheck" aria-label="Toggle navigation">
+      <label for="navcheck" class="hamburger" aria-hidden="true"><span></span><span></span><span></span></label>
+
+      <ul id="ulnavbar">
         <li>
           <a href="index.html">Welcome</a>
         </li>
@@ -52,9 +55,12 @@
   
   <body id="indexbody">
     
-    <header>
-    <h1 class="welcome">Hello there, I'm Ashley.</h1>
-    <img class="ashley" id="ashleyvr" src="assets/ashleySophomore.PNG" alt="Ashley out in nature with a headset!" style="border-radius: 50%;"/>
+    <div id="home-graphics">
+      <header>
+        <h1 class="welcome">Hello there, I'm Ashley.</h1>
+        <img class="ashley" id="ashleyvr" src="assets/ashleySophomore.PNG" alt="Ashley in a black blazer" style="border-radius: 50%;"/>
+      </header>
+    </div>
 
       <script>
         let i = 0;
@@ -65,7 +71,7 @@
         function transformsite() {  
 
           var rendererElement = document.querySelector('canvas');
-          var pinkBackgrounds = document.querySelectorAll('#ulnavbar, header, #aboutme, main, footer');
+          var pinkBackgrounds = document.querySelectorAll('header, #aboutme, main, footer');
 
           if (document.body.style.backgroundColor != "black") {
             document.body.style.backgroundColor = "black";
@@ -87,7 +93,7 @@
 
             while (i == 0) {
               var mybutton = document.createElement("BUTTON");
-              var buttontext = document.createTextNode("Hey, enter 3D here");
+              var buttontext = document.createTextNode("Enter VR here");
               mybutton.id = "enterbutton";
               mybutton.appendChild(buttontext);
               document.body.appendChild(mybutton);
@@ -123,28 +129,33 @@
           }
         }
       </script>
-    </header>
 
     <!-- About Me -->
     <section id="aboutme">
       <h2>About Me</h2>
       <p>
-          My name is Ashley Neall, and I'm a Junior at
+          My name is Ashley Neall, and I'm a Senior at
           <a id="UNClink" href="https://cs.unc.edu" target="_blank">UNC-Chapel Hill</a> studying <b>Computer Science</b>, <b>Neuroscience</b>, and <b>Applied Engineering</b>.
-          I'm passionate about computer graphics, computational displays (imaging, optics, haptics, BCIs), and human perception – all of which are crucial to improve XR systems.
-          You'll find me <a id="UNClink" href="research.html">researching</a> while
-          leading <a id="UNClink" href="https://uncarvr.org" target="_blank">Carolina AR/VR</a>
-          and <a id="ICXRlink" href="https://www.icxr.org/" target="_blank">Intercollegiate XR</a>.
-          In my free time, I still <a id="misclink" href="projects.html">develop</a>, but I also <a id="misclink" href="designs.html">design</a> and <a id="misclink" href="teaching.html">teach</a> :)
+          My research co-designs computational displays, sensing, and rendering systems for human sensation and perception. I am broadly interested in building multisensory XR systems that empower people.
       </p>
 
       <br>
 
       <p>
-        Fun fact: my passion for XR began in high school, where I created <a id="misclink" href="https://apeximmersive.weebly.com/" target="_blank">Apex Immersive</a> – the first XR student organization in North Carolina's largest public school system. My leadership endeavors led me to revitalize Carolina AR/VR as a freshman in college and dive into research.
+        You'll find me <a id="UNClink" href="research.html">researching</a> while
+        leading <a id="UNClink" href="https://uncarvr.org" target="_blank">Carolina AR/VR</a>
+        and <a id="ICXRlink" href="https://www.icxr.org/" target="_blank">Intercollegiate XR</a>.
+        In my free time, I <a id="misclink" href="projects.html">develop</a>, <a id="misclink" href="designs.html">design</a>, and <a id="misclink" href="teaching.html">teach</a> :)
       </p>
 
-      <p>Discover the two university-level XR student organizations I lead:</p>
+      <br>
+
+      <p>
+        Fun fact: my passion for XR began in high school, where I created <a id="misclink" href="https://apeximmersive.weebly.com/" target="_blank">Apex Immersive</a> – the first XR 
+        student organization in North Carolina's largest public school system. My leadership endeavors led me to revitalize Carolina AR/VR as a freshman in college and dive into research.
+      </p>
+
+      <p>Discover the two university-level XR student organizations I lead below:</p>
     
 
   </section>
