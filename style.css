@@ -3,8 +3,18 @@ canvas {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;  /* fill the container width */
+  height: 100%; /* fill the container height */
   z-index: -1; /* Ensures that Three.js graphics on the canvas is behind all other content! */
   /* when the canvas is at this layer, orbit controls don't work! */
+}
+
+/* Ensure the header section provides space for the canvas */
+#home-graphics {
+  position: relative;   /* make canvas positioning relative to this section */
+  min-height: 55vh;     /* consistent initial height on first load */
+  margin-bottom: clamp(16px, 3vh, 48px); /* add gap below graphics section */
+  overflow: hidden;     /* keep graphics clipped to the section */
 }
 
 #aboutme, #indexmain, #indexfooter, header {
@@ -25,23 +35,15 @@ main, footer {
 *{
   margin: 0px;
   padding: 0px;
-  font-family: Merienda,'Rubik 80s Fade';
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 h5 {
   padding: 3%;
 }
 
-h4 {
-  font-family: 'Courier New', Courier, monospace;
-}
-
 h2 {
   animation: fadeIn 2s;
-}
-
-b {
-  font-family: 'Courier New', Courier, monospace;
 }
 
 body {
@@ -124,7 +126,6 @@ a {
 .explore {
   padding-bottom: 1px;
   animation: fadeIn 2s;
-  font-family:'Courier New', Courier, monospace;
 }
 
 /* STYLE TEXT */
@@ -253,13 +254,15 @@ img {
   padding-bottom: 3%;
 }
 
-#aboutme h3 {
-  font-family: 'Courier New', Courier, monospace;
-}
-
 #aboutme p {
   padding-top: 1%;
-  font-family: 'Courier New', Courier, monospace;
+  font-weight: 400;
+}
+
+/* Ensure bold textuses Source Sans */
+#aboutme b {
+  font-family: inherit; /* inherit Source Sans 3 from paragraph (p) */
+  font-weight: 700;     /* bold */
 }
 
 
@@ -288,7 +291,6 @@ img {
   width: 70%;
   margin-top: 2%;
   margin-left: 14%;
-  font-family: 'Courier New', Courier, monospace;
 }
 
 /* Portfolio.HTML Text */
@@ -355,20 +357,35 @@ img {
 }
 
 
-/* Projects.HTML title text*/
-.projecttitle {
-  padding-top: 7%;
-  padding-left: 20%;
-  padding-right: 20%;
-  font-size: 20px;
-  margin: 10px;
+/* Projects.HTML text*/
+/* Projects page typography and spacing */
+p.description,
+h4.description {
+  font-family: 'Source Sans 3', sans-serif;
 }
 
-/* Projects.HTML text*/
-.projectdescription {
-  flex: 1;
-  margin: 10%;
-  text-align: center;
+h3.description {
+  margin-bottom: 0.6rem;   /* tighten space before the h4 */
+  font-weight: 700;        /* make project title stand out */
+}
+
+h2.description {
+  margin-bottom: 0.4rem;   /* tighten space before the h4 */
+}
+
+h4.description {
+  margin-top: 0.25rem;     /* reduce default heading top margin */
+  font-weight: 500;
+}
+
+/* Limit line length for readability and ensure wrapping */
+.textcontainer {
+  max-width: 100ch;         /* wrap lines sooner; centered by parent flex */
+}
+
+.description {
+  width: auto;             /* allow content to shrink under max-width */
+  overflow-wrap: break-word;
 }
 
 
@@ -483,10 +500,6 @@ li a:hover {
   .projects {
     width: 100%;
     margin-bottom: 10px;
-  } 
-
-.projectdescription {
-  text-align: center;
   }
 }
 

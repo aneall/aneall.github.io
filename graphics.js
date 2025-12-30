@@ -25,9 +25,16 @@ function getContainerSize() {
   }
 }
 
-// 4. Call init() and animate() functions to setup and render the 3D scene:
-init(); // initialize the scene, camera, renderer, and 3D objects
-animate(); // execute the rendering loop
+// 4. Call init() and animate() after page assets finish loading
+if (document.readyState === 'complete') {
+  init();
+  animate();
+} else {
+  window.addEventListener('load', () => {
+    init();
+    animate();
+  });
+}
 
 // 5. Define init() to setup the content in my scene:
 function init() {
