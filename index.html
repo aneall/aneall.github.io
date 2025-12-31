@@ -7,32 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
     <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/x-icon">
-
-    <nav class="site-nav">
-      <input type="checkbox" id="navcheck" class="navcheck" aria-label="Toggle navigation">
-      <label for="navcheck" class="hamburger" aria-hidden="true"><span></span><span></span><span></span></label>
-
-      <ul id="ulnavbar">
-        <li>
-          <a href="index.html">Welcome</a>
-        </li>
-        <li>
-          <a href="research.html">Research</a>
-        </li>
-        <li>
-          <a href="projects.html">Projects</a>
-        </li>
-        <li>
-          <a href="designs.html">Designs</a>
-        </li>
-        <li>
-            <a href="teaching.html">Teaching</a>
-        </li>
-        <li>
-          <a href="sandbox.html">Sandbox</a>
-      </li>
-      </ul>
-    </nav>
     
     <title>Ashley Neall</title>
     <meta charset="utf-8" />
@@ -58,11 +32,63 @@
   </head>
   
   <body id="indexbody">
+    <nav class="site-nav">
+      <input type="checkbox" id="navcheck" class="navcheck" aria-label="Toggle navigation">
+      <label for="navcheck" class="hamburger" aria-hidden="true"><span></span><span></span><span></span></label>
+
+      <ul id="ulnavbar">
+        <li>
+          <a href="index.html">Welcome</a>
+        </li>
+        <li>
+          <a href="research.html">Research</a>
+        </li>
+        <li>
+          <a href="projects.html">Projects</a>
+        </li>
+        <li>
+          <a href="designs.html">Designs</a>
+        </li>
+        <li>
+            <a href="teaching.html">Teaching</a>
+        </li>
+        <li>
+          <a href="sandbox.html">Sandbox</a>
+        </li>
+      </ul>
+    </nav>
     
     <div id="home-graphics">
       <header>
         <h1 class="welcome">Hello there, I'm Ashley.</h1>
-        <img class="ashley" id="ashleyvr" src="assets/ashleySophomore.PNG" alt="Ashley in a black blazer" style="border-radius: 50%;"/>
+
+        <div class="home-hero">
+          <div class="hero-text hero-card" id="herotext">
+            <p>
+              My name is <b>Ashley Neall</b>, and I'm a Senior at UNC-Chapel Hill studying Computer Science, Neuroscience, and Applied Engineering.
+              My research co-designs computational <b>displays</b>, <b>sensing</b>, and <b>rendering</b> paradigms for human <b>sensation and perception</b>. I am broadly interested in building <b>multisensory</b> extended reality (XR) systems that empower people through <b>efficiency</b> and <b>interactivity</b>.
+            </p>
+          </div>
+
+          <div class="hero-photo">
+            <img class="ashley" id="ashleyvr" src="assets/ashleySophomore.PNG" alt="Ashley in a black blazer" />
+
+            <div class="contact-icons" aria-label="Contact links">
+              <a href="https://scholar.google.com/citations?user=UgeBGw4AAAAJ&hl=en&oi=ao" aria-label="Google Scholar">
+                <img id="myscholar" src="assets/googlescholar.png" alt="Google Scholar" />
+              </a>
+              <a href="https://github.com/aneall" aria-label="GitHub">
+                <img id="mygithub" src="assets/github.png" alt="GitHub" />
+              </a>
+              <a href="https://www.linkedin.com/in/ashley-neall" aria-label="LinkedIn">
+                <img id="mylinkedin" src="assets/linkedin.PNG" alt="LinkedIn" />
+              </a>
+              <a href="mailto:aneall@unc.edu" aria-label="Email">
+                <img id="myemail" src="assets/emailtest.PNG" alt="Email" />
+              </a>
+            </div>
+          </div>
+        </div>
       </header>
     </div>
 
@@ -92,6 +118,8 @@
             document.getElementById("mygithub").style.display = "none";
             document.getElementById("myscholar").style.display = "none";
             document.getElementById("aboutme").style.display = "none";
+            var heroTextEl = document.getElementById('herotext');
+            if (heroTextEl) { heroTextEl.style.display = 'none'; }
             rendererElement.style.display = "none";
               
 
@@ -100,8 +128,13 @@
               var buttontext = document.createTextNode("Enter VR here");
               mybutton.id = "enterbutton";
               mybutton.appendChild(buttontext);
-              document.body.appendChild(mybutton);
-                i += 1;
+              var photoContainer = document.querySelector('.hero-photo');
+              if (photoContainer) {
+                photoContainer.appendChild(mybutton);
+              } else {
+                document.body.appendChild(mybutton);
+              }
+              i += 1;
             }
             
           document.getElementById("enterbutton").style.visibility = "visible";
@@ -122,6 +155,8 @@
             document.getElementById("mygithub").style.display = "initial";
             document.getElementById("myscholar").style.display = "initial";
             document.getElementById("aboutme").style.display = "inherit";
+            var heroTextEl2 = document.getElementById('herotext');
+            if (heroTextEl2) { heroTextEl2.style.display = 'block'; }
             rendererElement.style.display = "initial";
             document.getElementById("enterbutton").style.visibility = "hidden";
           }
@@ -134,28 +169,19 @@
         }
       </script>
 
-    <!-- About Me -->
+    <!-- About Me (remaining content) -->
     <section id="aboutme">
-      <h2>About Me</h2>
-      <p>
-          My name is Ashley Neall, and I'm a Senior at
-          <a id="UNClink" href="https://cs.unc.edu" target="_blank">UNC-Chapel Hill</a> studying <b>Computer Science</b>, <b>Neuroscience</b>, and <b>Applied Engineering</b>.
-          My research co-designs computational displays, sensing, and rendering systems for human sensation and perception. I am broadly interested in building multisensory XR systems that empower people.
-      </p>
-
       <br>
 
       <p>
-        You'll find me <a id="UNClink" href="research.html">researching</a> while
-        leading <a id="UNClink" href="https://uncarvr.org" target="_blank">Carolina AR/VR</a>
-        and <a id="ICXRlink" href="https://www.icxr.org/" target="_blank">Intercollegiate XR</a>.
+        You'll find me <a id="UNClink" href="research.html">researching</a> while leading <a id="UNClink" href="https://uncarvr.org" target="_blank">Carolina AR/VR</a> and <a id="ICXRlink" href="https://www.icxr.org/" target="_blank">Intercollegiate XR</a>.
         In my free time, I <a id="misclink" href="projects.html">develop</a>, <a id="misclink" href="designs.html">design</a>, and <a id="misclink" href="teaching.html">teach</a> :)
       </p>
 
       <br>
 
       <p>
-        Fun fact: my passion for XR began in high school, where I created <a id="misclink" href="https://apeximmersive.weebly.com/" target="_blank">Apex Immersive</a> – the first XR 
+        My passion for XR began in high school, where I created <a id="misclink" href="https://apeximmersive.weebly.com/" target="_blank">Apex Immersive</a> – the first XR 
         student organization in North Carolina's largest public school system. My leadership endeavors led me to revitalize Carolina AR/VR as a freshman in college and dive into research.
       </p>
 
@@ -171,31 +197,14 @@
       <a href="https://uncarvr.org"> <img id="carvr" src="assets/carvr.png" width=11% height=11% style="border: 0;"/></a>
 
     </main>
-
-    <section id="aboutme">
-
-      <p>
-        Connect with and explore more about me below:
-      </p>
-
-    </section>
     
     <div></div>
 
     <footer id="indexfooter">
-
-      <a href="https://scholar.google.com/citations?user=UgeBGw4AAAAJ&hl=en&oi=ao"> <img id="myscholar" src="assets/googlescholar.png" width=3.5% height=3.5% style="border: 0;"/></a>
-
-      <a href="https://github.com/aneall"> <img id="mygithub" src="assets/github.png" width=4% height=4% style="border: 0;"/></a>
-
-      <a href="https://www.linkedin.com/in/ashley-neall"> <img id="mylinkedin" src="assets/linkedin.PNG" width=5% height=5% style="border: 0;"/></a>
-
-      <a href="mailto:aneall@unc.edu"><img id="myemail" src="assets/emailtest.PNG" width=5% height=5% style="border: 0;"/></a>
-      
       <h5>
-       Made with ❤︎ by Ashley Neall © 2025
-    </h5>
-</footer>
+        Made with ❤︎ by Ashley Neall © 2025
+      </h5>
+    </footer>
     
   </body>
 </html>

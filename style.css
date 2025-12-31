@@ -15,6 +15,8 @@ canvas {
   min-height: 55vh;     /* consistent initial height on first load */
   margin-bottom: clamp(16px, 3vh, 48px); /* add gap below graphics section */
   overflow: hidden;     /* keep graphics clipped to the section */
+  z-index: 1;           /* overlay section above canvas */
+  background-color: rgba(112, 163, 225, 0.9); /* mobile overlay should cover full graphics area */
 }
 
 #aboutme, #indexmain, #indexfooter, header {
@@ -36,6 +38,12 @@ main, footer {
   margin: 0px;
   padding: 0px;
   font-family: 'Source Sans 3', sans-serif;
+}
+
+/* Prevent slight horizontal shift when content toggles (scrollbar width) */
+html {
+  scrollbar-gutter: stable;      /* modern browsers */
+  overflow-y: scroll;            /* fallback: always reserve gutter */
 }
 
 h5 {
@@ -163,7 +171,7 @@ img {
 #enterbutton {
   background-color: black;
   color: #f85fe6;
-  padding: 10px 20px;
+  padding: 10px 16px;
   border: none;
   border-radius: 5px;
   text-align: center; /* TEST REMOVE */
@@ -172,10 +180,11 @@ img {
   font-size: 20px; /* TEST REMOVE */
   cursor: url("assets/vrcursor.png"), auto;
   position: absolute;
-  top: 12%; /* TEST REMOVE */
-  left: 34%; /* TEST REMOVE */
-  right: 34%; /* TEST REMOVE */
-  z-index: 1;
+  top: 50%;
+  left: -12rem;              /* place to the left of the photo */
+  transform: translateY(-50%);
+  z-index: 2;
+  white-space: nowrap;
   transition: background-color 0.35s; /* hover color transition */
 }
 
@@ -263,6 +272,93 @@ img {
 #aboutme b {
   font-family: inherit; /* inherit Source Sans 3 from paragraph (p) */
   font-weight: 700;     /* bold */
+}
+
+/* New homepage hero layout (indexnew.html) */
+.home-hero {
+  display: grid;
+  grid-template-columns: 1fr minmax(240px, 360px);
+  align-items: center;
+  gap: clamp(16px, 4vw, 40px);
+  padding: clamp(16px, 4vw, 48px) 10%;
+  position: relative;
+  z-index: 2; /* above canvas */
+}
+
+.home-hero .hero-text {
+  text-align: left;
+}
+
+.home-hero .hero-text h2 {
+  margin-bottom: 0.5rem;
+}
+
+.home-hero .hero-photo {
+  justify-self: end;
+  grid-column: 2; /* keep photo in right column even if text hides */
+  position: relative; /* allow absolute positioning inside (VR button) */
+}
+
+.home-hero .hero-photo .ashley {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 50%;
+}
+
+/* Subtle white overlay card behind hero text */
+.hero-card {
+  position: relative;               /* enable z-index */
+  z-index: 2;                       /* above canvas */
+  display: inline-block;            /* wrap to content width */
+  background: rgba(255, 255, 255, .45);
+  border-radius: 16px;
+  padding: clamp(12px, 2vw, 20px) clamp(10px, 2vw, 20px);
+  box-shadow: 0 6px 24px rgba(0,0,0,.12);
+  backdrop-filter: blur(2px);       /* softens 3D behind on supported browsers */
+}
+
+/* Contact icons row below the photo (indexnew.html only) */
+.home-hero .contact-icons {
+  display: flex;
+  gap: clamp(12px, 3vw, 20px);
+  justify-content: center;
+  align-items: center;
+  margin-top: clamp(12px, 3vw, 20px);
+  --icon-size: clamp(28px, 6vw, 42px); /* base size matching current Scholar icon */
+}
+
+.home-hero .contact-icons img {
+  width: var(--icon-size);
+  height: auto;
+  border: 0;           /* override global img border */
+  margin: 0;           /* tighter spacing for small icons */
+}
+
+/* Make GitHub, LinkedIn, and Email visually match Scholar size */
+.home-hero .contact-icons #mygithub {
+  width: calc(var(--icon-size) * 1.20);
+}
+
+.home-hero .contact-icons #myemail  {
+  width: calc(var(--icon-size) * 1.30);
+}
+
+.home-hero .contact-icons #mylinkedin {
+  width: calc(var(--icon-size) * 1.50);
+}
+
+@media (max-width: 900px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    padding: 24px 6%;
+  }
+  .home-hero .hero-photo {
+    justify-self: center;
+    grid-column: auto; /* reset explicit column on small screens */
+  }
+  .home-hero .hero-photo .ashley {
+    max-width: 70vw;
+  }
 }
 
 
@@ -560,5 +656,12 @@ li a:hover {
   .site-nav {
     position: fixed;
     top: 0; left: 0; right: 0;
+    z-index: 10;              /* ensure nav sits above all */
+    min-height: 56px;         /* consistent tap target height */
+  }
+
+  /* offset content so it doesn't hide under fixed nav */
+  #home-graphics {
+    margin-top: 56px;
   }
 }
