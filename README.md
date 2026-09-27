@@ -2,9 +2,9 @@
 
 ## An Introduction
 [My Personal Website!](https://aneall.github.io) is a work-in-progress portfolio to showcase my academic and industry work:
-- Computer Science – computational displays, computer graphics, vision, audio
+- Computer Science – computational imaging, displays, graphics, vision, audio
 - Neuroscience – human sensation and perception, physiology, vision, olfaction, gustation
-- Applied Engineering – electronics, optics, biosensing
+- Applied Engineering – optics, signal processing, biosensing
 
 ## Homepage
 If you pay close attention, you'll notice three things:

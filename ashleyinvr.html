@@ -28,27 +28,27 @@
     <a-scene cursor="rayOrigin: mouse">
       
       <a-plane position="0 .45 0" rotation="-90 0 0" width="50" height="30" color="#FA9AFF"></a-plane>
-        <! we rotate by "-90" so that our plane is vertical>
+        <!-- we rotate by "-90" so that our plane is vertical-->
       
-      <a-sky src="https://cdn.glitch.global/5f61a17b-7aef-4cfa-8ca4-688d581e26bc/skybox.jpeg?v=1729375807665"></a-sky>
+      <a-sky material="shader: holographic;" shader-time scale=".5 .5 2" animation="property: rotation; from: 0 0 0; to: 360 360 0; loop: true; dur: 3000; easing: linear"></a-sky>
       
       <a-assets>
         <a-asset-item 
           id="oldwell"
           response-type="arraybuffer"
-          src="https://cdn.glitch.global/5f61a17b-7aef-4cfa-8ca4-688d581e26bc/smoothoriginal-oldwell.glb?v=1703801359081">
+          src="assets/oldwell.glb">
         </a-asset-item>
         
         <a-asset-item 
           id="bunny"
           response-type="arraybuffer"
-          src="https://cdn.glitch.global/5f61a17b-7aef-4cfa-8ca4-688d581e26bc/bunny.glb?v=1729370931704">
+          src="assets/bunny.glb">
         </a-asset-item>
         
         <a-asset-item
           id="ashleyVR"
           response-type="arraybuffer"
-          src="https://cdn.glitch.global/5f61a17b-7aef-4cfa-8ca4-688d581e26bc/ashleyVR-updated.glb?v=1703961335809">
+          src="assets/ashleyVR.glb">
         </a-asset-item>
         
         <a-asset-item
@@ -58,27 +58,21 @@
         </a-asset-item>
         
         <a-asset-item
-          id="tree"
-          response-type="arraybuffer"
-          src="https://cdn.glitch.global/5f61a17b-7aef-4cfa-8ca4-688d581e26bc/bluetree1.glb?v=1702871065359">
-        </a-asset-item>
-        
-        <a-asset-item
           id="teapot"
           response-type="arraybuffer"
-          src="https://cdn.glitch.global/5f61a17b-7aef-4cfa-8ca4-688d581e26bc/teapot.glb?v=1703964629058">
+          src="assets/teapot.glb">
         </a-asset-item>
       </a-assets>
       
-      <a-entity gltf-model="#bunny" scale=".1 .1 .1" position="2 .5 -6" target-marker></a-entity>
-      <a-entity gltf-model="#oldwell" scale=".3 .3 .3" position="-1 .4 -6" target-marker></a-entity>
-      <a-entity gltf-model="#ashleyVR" scale="1 1 1" position="0 .45 -5" rotation="0 300 0"></a-entity>
+      <a-entity gltf-model="#bunny" scale=".3 .3 .3" position="-1 .5 -6" target-marker></a-entity>
+      <a-entity gltf-model="#oldwell" scale=".3 .3 .3" position="0 .4 -6" target-marker></a-entity>
+      <a-entity gltf-model="#ashleyVR" scale="1 1 1" position="0.1 .45 -5" rotation="0 300 0"></a-entity>
       <a-entity gltf-model="#backto2D" navigate-on-click="url: index.html" scale="3 3 3" position="1 2 -5" rotation="0 110 0" animation="property: rotation; from: 0 110 0; to: 0 470 0; loop: true; dur: 5000; easing: linear"></a-entity>
       
       <!-- models with custom shaders; loaded meshes MUST use 'apply iridescent' and 'shader-fresnel' -->
-      <a-entity gltf-model="#teapot" scale=".1 .1 .1" position="3 .5 -6" target-marker></a-entity>
+      <a-entity gltf-model="#teapot" scale=".3 .3 .3" position="3 .5 -6" target-marker></a-entity>
       
-      <a-box position=".8 1.7 -5" material="shader: holographic;" shader-time scale=".2 .2 .2" animation="property: rotation; from: 0 0 0; to: 360 360 0; loop: true; dur: 3000; easing: linear"></a-box>
+      <a-box position="1 1.7 -4.5" material="shader: holographic;" shader-time scale=".5 .5 .5" animation="property: rotation; from: 0 0 0; to: 360 360 0; loop: true; dur: 3000; easing: linear"></a-box>
     
       
       <a-entity id="rig">
